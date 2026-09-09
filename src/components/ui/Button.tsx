@@ -1,6 +1,6 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react'
 
-type Variant = 'primary' | 'whatsapp' | 'outline' | 'ghost'
+type Variant = 'primary' | 'whatsapp' | 'outline' | 'ghost' | 'inverted'
 type Size = 'md' | 'lg'
 
 interface ButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -17,6 +17,7 @@ const variants: Record<Variant, string> = {
   whatsapp: 'bg-whatsapp text-primary-foreground shadow-whatsapp hover:brightness-95 hover:shadow-whatsapp-hover',
   outline: 'border border-border bg-background text-foreground hover:border-primary hover:text-primary',
   ghost: 'text-foreground hover:bg-muted',
+  inverted: 'bg-primary-foreground text-primary hover:bg-primary-foreground/90',
 }
 
 const sizes: Record<Size, string> = {

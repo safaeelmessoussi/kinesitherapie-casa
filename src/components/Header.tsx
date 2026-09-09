@@ -44,17 +44,16 @@ export function Header() {
         scrolled ? 'border-b border-border/80 bg-background/85 shadow-header backdrop-blur-md' : 'bg-background'
       }`}
     >
-      <div className="container-page flex h-18 items-center justify-between gap-6">
-        <a href="#top" className="flex items-center gap-3" aria-label={site.name}>
-          <span className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-            <svg viewBox="0 0 64 64" className="size-6" aria-hidden="true">
-              <path d="M22 18v28M42 18v28M22 32h20" stroke="currentColor" strokeWidth="7" strokeLinecap="round" fill="none" />
-              <circle cx="48" cy="18" r="6" className="fill-accent" />
-            </svg>
-          </span>
+      <div className="container-page flex h-18 items-center justify-between gap-4">
+        <a href="#top" className="flex shrink-0 items-center gap-3" aria-label={site.name}>
+          <img src="/logo.png" alt="" width={44} height={44} className="size-11 shrink-0 object-contain" />
           <span className="flex flex-col leading-tight">
-            <span className="font-heading text-sm font-bold tracking-tight whitespace-nowrap sm:text-base">{site.name}</span>
-            <span className="hidden text-xs text-muted-foreground sm:block">{site.practitioner}</span>
+            <span className="hidden whitespace-nowrap text-[0.7rem] font-semibold uppercase tracking-wider text-muted-foreground sm:block lg:hidden xl:block">
+              {t.brand.line1}
+            </span>
+            <span className="font-heading text-base font-extrabold tracking-tight text-primary whitespace-nowrap sm:text-lg">
+              {t.brand.line2}
+            </span>
           </span>
         </a>
 
@@ -63,14 +62,14 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <LanguageSwitcher />
           <ButtonLink href={whatsappHref(t.whatsappMessage)} variant="whatsapp" target="_blank" rel="noopener noreferrer">
             <WhatsAppIcon className="size-4" />

@@ -1,6 +1,6 @@
-# Kinésithérapie Casa
+# Centre de Kinésithérapie El Kandari
 
-Landing page du cabinet de kinésithérapie de Walid à Casablanca.
+Landing page du Centre de Kinésithérapie El Kandari (Sidi Othmane, Casablanca).
 Site statique React + Vite + Tailwind CSS v4, disponible en français, anglais, arabe et tamazight, déployé sur Cloudflare Pages.
 
 ## Développement
@@ -28,5 +28,6 @@ Les en-têtes de sécurité et le cache des assets sont définis dans `public/_h
 ## Modifier le contenu
 
 - Textes FR / EN / AR / ZGH : `src/i18n/translations.ts`
-- Téléphone, nom du cabinet, ville : `src/lib/site.ts`
+- Téléphones, adresse, lien Google Maps, réseaux sociaux : `src/lib/site.ts`
+- Logo et favicons : `public/logo.png`, `public/favicon.png`, `public/apple-touch-icon.png`
 - Images : `public/images/`

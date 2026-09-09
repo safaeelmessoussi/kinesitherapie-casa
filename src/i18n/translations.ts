@@ -34,6 +34,10 @@ export interface Translation {
     title: string
     description: string
   }
+  brand: {
+    line1: string
+    line2: string
+  }
   nav: {
     services: string
     about: string
@@ -70,8 +74,6 @@ export interface Translation {
     title: string
     paragraphs: string[]
     values: { title: string; description: string }[]
-    imageAlt: string
-    quote: string
   }
   approach: {
     eyebrow: string
@@ -101,12 +103,16 @@ export interface Translation {
     phoneLabel: string
     whatsappLabel: string
     whatsappHint: string
+    landlineLabel: string
+    addressLabel: string
+    addressValue: string
+    mapsCta: string
+    locationShort: string
     hoursLabel: string
     hoursValue: string
-    locationLabel: string
-    locationValue: string
     languagesLabel: string
     languagesValue: string
+    followLabel: string
     ctaWhatsapp: string
     ctaCall: string
   }
@@ -122,13 +128,17 @@ export interface Translation {
 export const translations: Record<Lang, Translation> = {
   fr: {
     meta: {
-      title: 'Kinésithérapie Casa — Cabinet de kinésithérapie à Casablanca | Walid',
+      title: 'Centre de Kinésithérapie El Kandari — Casablanca, Sidi Othmane',
       description:
-        'Cabinet de kinésithérapie à Casablanca : rééducation, kiné du sport, douleurs du dos, kinésithérapie respiratoire et séances à domicile. Prise de rendez-vous rapide par téléphone ou WhatsApp.',
+        'Centre de kinésithérapie à Casablanca (Sidi Othmane) : rééducation, kiné du sport, douleurs du dos, posture et séances à domicile. Prise de rendez-vous rapide par téléphone ou WhatsApp.',
+    },
+    brand: {
+      line1: 'Centre de Kinésithérapie',
+      line2: 'El Kandari',
     },
     nav: {
       services: 'Soins',
-      about: 'Le kiné',
+      about: 'Le centre',
       approach: 'Déroulement',
       home: 'À domicile',
       faq: 'FAQ',
@@ -139,16 +149,16 @@ export const translations: Record<Lang, Translation> = {
       language: 'Langue',
     },
     hero: {
-      eyebrow: 'Cabinet de kinésithérapie · Casablanca',
+      eyebrow: 'Centre de kinésithérapie · Sidi Othmane, Casablanca',
       title: 'Retrouvez le mouvement,',
       highlight: 'sans la douleur.',
       subtitle:
-        'Walid vous accompagne avec une kinésithérapie moderne, humaine et efficace : au cabinet ou directement chez vous, à Casablanca. Un bilan précis, un plan clair, et des résultats que vous ressentez.',
+        'Nous vous accompagnons avec une kinésithérapie moderne, humaine et efficace : au centre, à Sidi Othmane, ou directement chez vous à Casablanca. Un bilan précis, un plan clair, et des résultats que vous ressentez.',
       ctaWhatsapp: 'Réserver sur WhatsApp',
-      ctaCall: 'Appeler le cabinet',
+      ctaCall: 'Appeler le centre',
       badgeHome: 'Séances à domicile',
       badgeReply: 'Réponse rapide sur WhatsApp',
-      imageAlt: 'Salle de soins lumineuse du cabinet de kinésithérapie à Casablanca',
+      imageAlt: 'Salle de soins lumineuse du centre de kinésithérapie à Casablanca',
     },
     trust: [
       {
@@ -156,8 +166,8 @@ export const translations: Record<Lang, Translation> = {
         description: 'Chaque séance est construite autour de votre bilan, de vos objectifs et de votre rythme.',
       },
       {
-        title: 'Cabinet ou domicile',
-        description: 'Vous choisissez : au cabinet ou chez vous, avec le même matériel et la même exigence.',
+        title: 'Au centre ou à domicile',
+        description: 'Vous choisissez : au centre ou chez vous, avec le même matériel et la même exigence.',
       },
       {
         title: 'Rendez-vous rapides',
@@ -172,7 +182,7 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'Nos soins',
       title: 'Une prise en charge complète, adaptée à votre situation',
       subtitle:
-        'De la douleur aiguë à la reprise du sport, le cabinet accompagne adultes, sportifs et seniors avec des techniques manuelles et actives reconnues.',
+        'De la douleur aiguë à la reprise du sport, le centre accompagne adultes, sportifs et seniors avec des techniques manuelles et actives reconnues.',
       items: [
         {
           title: 'Rééducation post-opératoire & traumatologie',
@@ -190,9 +200,9 @@ export const translations: Record<Lang, Translation> = {
             'Lombalgie, cervicalgie, sciatique, tendinites, épaule douloureuse : soulager, comprendre la cause et éviter la récidive.',
         },
         {
-          title: 'Kinésithérapie respiratoire',
+          title: 'Posture, ergonomie & prévention',
           description:
-            'Désencombrement bronchique et rééducation du souffle pour nourrissons, enfants et adultes, en période aiguë ou chronique.',
+            'Analyse posturale, conseils ergonomiques (bureau, télétravail, gestes du quotidien) et programmes de prévention pour éviter que la douleur ne revienne.',
         },
         {
           title: 'Rééducation neurologique',
@@ -202,18 +212,18 @@ export const translations: Record<Lang, Translation> = {
         {
           title: 'Kinésithérapie des seniors',
           description:
-            'Équilibre, prévention des chutes, entretien de la mobilité et maintien de l\u2019indépendance, au cabinet ou à domicile.',
+            'Équilibre, prévention des chutes, entretien de la mobilité et maintien de l\u2019indépendance, au centre ou à domicile.',
         },
       ],
       note: 'Votre besoin n\u2019apparaît pas ici ? Écrivez-nous sur WhatsApp, nous vous orienterons.',
     },
     about: {
-      eyebrow: 'Votre kinésithérapeute',
-      title: 'Walid, l\u2019énergie d\u2019un jeune kiné, l\u2019écoute d\u2019un vrai partenaire',
+      eyebrow: 'Le centre',
+      title: 'Votre santé est notre priorité',
       paragraphs: [
-        'Kinésithérapeute à Casablanca, Walid a une conviction simple : on se rétablit mieux quand on comprend ce qui se passe dans son corps et quand on avance avec quelqu\u2019un qui y croit autant que soi.',
-        'Sa pratique associe thérapie manuelle, exercices actifs et éducation du patient. Pas de séances mécaniques : chaque rendez-vous a un objectif, chaque progrès est mesuré, et le plan s\u2019adapte à votre évolution.',
-        'Dynamique, direct et bienveillant, il accompagne aussi bien le sportif pressé de reprendre que la personne qui souhaite simplement retrouver un quotidien sans douleur.',
+        'Au Centre de Kinésithérapie El Kandari, à Sidi Othmane, nous partons d\u2019une conviction simple : on se rétablit mieux quand on comprend ce qui se passe dans son corps et quand on avance avec une équipe qui y croit autant que soi.',
+        'Notre pratique associe thérapie manuelle, exercices actifs et éducation du patient. Pas de séances mécaniques : chaque rendez-vous a un objectif, chaque progrès est mesuré, et le plan s\u2019adapte à votre évolution.',
+        'Dynamiques, directs et bienveillants, nous accompagnons aussi bien le sportif pressé de reprendre que la personne qui souhaite simplement retrouver un quotidien sans douleur — au centre ou à domicile.',
       ],
       values: [
         {
@@ -229,8 +239,6 @@ export const translations: Record<Lang, Translation> = {
           description: 'Bilan initial, objectifs clairs, réévaluations régulières et exercices adaptés à domicile.',
         },
       ],
-      imageAlt: 'Portrait de Walid, kinésithérapeute à Casablanca',
-      quote: '« Mon rôle n\u2019est pas seulement de soulager : c\u2019est de vous rendre autonome et confiant dans votre corps. »',
     },
     approach: {
       eyebrow: 'Déroulement',
@@ -253,18 +261,18 @@ export const translations: Record<Lang, Translation> = {
             'Vous recevez des exercices simples à réaliser chez vous, avec un suivi WhatsApp pour rester sur la bonne voie et prévenir les rechutes.',
         },
       ],
-      imageAlt: 'Séance de thérapie manuelle de l\u2019épaule au cabinet',
+      imageAlt: 'Séance de thérapie manuelle de l\u2019épaule au centre',
     },
     home: {
       eyebrow: 'Séances à domicile',
       title: 'La même qualité de soins, directement chez vous à Casablanca',
       subtitle:
-        'Mobilité réduite, sortie d\u2019hospitalisation, emploi du temps chargé ou simple préférence : le kiné se déplace avec le matériel nécessaire.',
+        'Mobilité réduite, sortie d\u2019hospitalisation, emploi du temps chargé ou simple préférence : notre équipe se déplace avec le matériel nécessaire.',
       points: [
         'Déplacement dans Casablanca et ses environs',
         'Matériel professionnel transporté à chaque séance',
         'Créneaux en journée et en début de soirée selon disponibilités',
-        'Idéal pour les seniors, la rééducation post-opératoire et la kiné respiratoire',
+        'Idéal pour les seniors et la rééducation post-opératoire',
       ],
       cta: 'Demander une séance à domicile',
       imageAlt: 'Table de kinésithérapie portable installée dans un salon lumineux',
@@ -287,7 +295,7 @@ export const translations: Record<Lang, Translation> = {
         {
           question: 'Comment prendre rendez-vous ?',
           answer:
-            'Le plus simple est d\u2019envoyer un message WhatsApp ou d\u2019appeler le cabinet. Précisez votre besoin et vos disponibilités, nous vous proposons rapidement un créneau au cabinet ou à domicile.',
+            'Le plus simple est d\u2019envoyer un message WhatsApp ou d\u2019appeler le centre. Précisez votre besoin et vos disponibilités, nous vous proposons rapidement un créneau au centre ou à domicile.',
         },
         {
           question: 'Que dois-je apporter et comment m\u2019habiller ?',
@@ -297,52 +305,57 @@ export const translations: Record<Lang, Translation> = {
         {
           question: 'Les séances à domicile coûtent-elles plus cher ?',
           answer:
-            'Un supplément de déplacement peut s\u2019appliquer selon la zone. Les tarifs sont communiqués clairement avant la première séance : contactez-nous pour un devis précis.',
+            'Un supplément de déplacement peut s\u2019appliquer selon la zone. Les tarifs sont communiqués clairement avant la première séance.',
         },
         {
           question: 'Quels moyens de paiement acceptez-vous ?',
-          answer:
-            'Le règlement s\u2019effectue à chaque séance ou par forfait selon votre prise en charge. Une facture vous est remise pour votre remboursement éventuel.',
+          answer: 'Le règlement s\u2019effectue à chaque séance ou par forfait selon votre prise en charge.',
         },
       ],
     },
     contact: {
       eyebrow: 'Contact',
       title: 'Prenez rendez-vous dès aujourd\u2019hui',
-      subtitle:
-        'Un message suffit pour obtenir un créneau. Décrivez votre besoin, nous vous répondons rapidement.',
-      phoneLabel: 'Téléphone',
+      subtitle: 'Un message suffit pour obtenir un créneau. Décrivez votre besoin, nous vous répondons rapidement.',
+      phoneLabel: 'Mobile',
       whatsappLabel: 'WhatsApp',
       whatsappHint: 'Réponse rapide, du lundi au samedi',
+      landlineLabel: 'Téléphone fixe',
+      addressLabel: 'Adresse',
+      addressValue: '176 Bd Nil, 1er étage, Hay Mabrouka — Sidi Othmane, Casablanca',
+      mapsCta: 'Ouvrir dans Google Maps',
+      locationShort: 'Sidi Othmane, Casablanca',
       hoursLabel: 'Horaires',
       hoursValue: 'Du lundi au samedi, sur rendez-vous',
-      locationLabel: 'Localisation',
-      locationValue: 'Casablanca — cabinet et déplacements à domicile',
       languagesLabel: 'Langues parlées',
       languagesValue: 'Français · Arabe · English',
+      followLabel: 'Suivez-nous',
       ctaWhatsapp: 'Écrire sur WhatsApp',
       ctaCall: 'Appeler maintenant',
     },
     footer: {
-      tagline: 'Cabinet de kinésithérapie à Casablanca — au cabinet et à domicile.',
+      tagline: 'Votre santé est notre priorité.',
       rights: 'Tous droits réservés.',
       disclaimer:
         'Les informations de ce site ne remplacent pas un avis médical. En cas d\u2019urgence, contactez les services d\u2019urgence.',
     },
-    whatsappMessage:
-      'Bonjour, je souhaite prendre rendez-vous pour une séance de kinésithérapie à Casablanca.',
+    whatsappMessage: 'Bonjour, je souhaite prendre rendez-vous pour une séance de kinésithérapie à Casablanca.',
     floating: 'Discuter sur WhatsApp',
   },
 
   en: {
     meta: {
-      title: 'Kinésithérapie Casa — Physiotherapy Clinic in Casablanca | Walid',
+      title: 'Centre de Kinésithérapie El Kandari — Physiotherapy in Casablanca, Sidi Othmane',
       description:
-        'Physiotherapy clinic in Casablanca: rehabilitation, sports physio, back pain, respiratory physiotherapy and home visits. Book quickly by phone or WhatsApp.',
+        'Physiotherapy clinic in Casablanca (Sidi Othmane): rehabilitation, sports physio, back pain, posture and home visits. Book quickly by phone or WhatsApp.',
+    },
+    brand: {
+      line1: 'Centre de Kinésithérapie',
+      line2: 'El Kandari',
     },
     nav: {
       services: 'Treatments',
-      about: 'Your physio',
+      about: 'The clinic',
       approach: 'How it works',
       home: 'Home visits',
       faq: 'FAQ',
@@ -353,11 +366,11 @@ export const translations: Record<Lang, Translation> = {
       language: 'Language',
     },
     hero: {
-      eyebrow: 'Physiotherapy clinic · Casablanca',
+      eyebrow: 'Physiotherapy clinic · Sidi Othmane, Casablanca',
       title: 'Move freely again,',
       highlight: 'without the pain.',
       subtitle:
-        'Walid offers modern, human and effective physiotherapy — at the clinic or in the comfort of your home in Casablanca. A precise assessment, a clear plan, and results you can feel.',
+        'We offer modern, human and effective physiotherapy — at our clinic in Sidi Othmane or in the comfort of your home in Casablanca. A precise assessment, a clear plan, and results you can feel.',
       ctaWhatsapp: 'Book on WhatsApp',
       ctaCall: 'Call the clinic',
       badgeHome: 'Home visits available',
@@ -404,9 +417,9 @@ export const translations: Record<Lang, Translation> = {
             'Lower back pain, neck pain, sciatica, tendinitis, painful shoulder: relieve, understand the cause and prevent recurrence.',
         },
         {
-          title: 'Respiratory physiotherapy',
+          title: 'Posture, ergonomics & prevention',
           description:
-            'Airway clearance and breathing rehabilitation for infants, children and adults, in acute or chronic conditions.',
+            'Postural analysis, ergonomic advice (desk work, remote work, everyday movements) and prevention programmes so the pain does not come back.',
         },
         {
           title: 'Neurological rehabilitation',
@@ -415,19 +428,18 @@ export const translations: Record<Lang, Translation> = {
         },
         {
           title: 'Physiotherapy for seniors',
-          description:
-            'Balance, fall prevention, mobility maintenance and independence, at the clinic or at home.',
+          description: 'Balance, fall prevention, mobility maintenance and independence, at the clinic or at home.',
         },
       ],
       note: 'Can\u2019t find what you need? Message us on WhatsApp and we will guide you.',
     },
     about: {
-      eyebrow: 'Your physiotherapist',
-      title: 'Walid: the energy of a young physio, the attention of a true partner',
+      eyebrow: 'The clinic',
+      title: 'Your health is our priority',
       paragraphs: [
-        'A physiotherapist in Casablanca, Walid holds a simple belief: people recover better when they understand what is happening in their body and move forward with someone who believes in it as much as they do.',
-        'His practice combines manual therapy, active exercise and patient education. No routine sessions: every appointment has a goal, every improvement is measured, and the plan adapts as you progress.',
-        'Dynamic, straightforward and caring, he supports the athlete eager to get back on the field as much as the person who simply wants a pain-free daily life.',
+        'At Centre de Kinésithérapie El Kandari in Sidi Othmane, we start from a simple belief: people recover better when they understand what is happening in their body and move forward with a team that believes in it as much as they do.',
+        'Our practice combines manual therapy, active exercise and patient education. No routine sessions: every appointment has a goal, every improvement is measured, and the plan adapts as you progress.',
+        'Dynamic, straightforward and caring, we support the athlete eager to get back on the field as much as the person who simply wants a pain-free daily life — at the clinic or at home.',
       ],
       values: [
         {
@@ -443,8 +455,6 @@ export const translations: Record<Lang, Translation> = {
           description: 'Initial assessment, clear goals, regular re-evaluations and tailored home exercises.',
         },
       ],
-      imageAlt: 'Portrait of Walid, physiotherapist in Casablanca',
-      quote: '\u201CMy role isn\u2019t only to relieve pain: it\u2019s to make you independent and confident in your body.\u201D',
     },
     approach: {
       eyebrow: 'How it works',
@@ -473,12 +483,12 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'Home visits',
       title: 'The same quality of care, right at your home in Casablanca',
       subtitle:
-        'Reduced mobility, hospital discharge, a busy schedule or simple preference: your physio comes to you with the necessary equipment.',
+        'Reduced mobility, hospital discharge, a busy schedule or simple preference: our team comes to you with the necessary equipment.',
       points: [
         'Visits across Casablanca and surrounding areas',
         'Professional equipment brought to every session',
         'Daytime and early-evening slots depending on availability',
-        'Ideal for seniors, post-surgery rehabilitation and respiratory physiotherapy',
+        'Ideal for seniors and post-surgery rehabilitation',
       ],
       cta: 'Request a home visit',
       imageAlt: 'Portable physiotherapy table set up in a bright living room',
@@ -511,12 +521,11 @@ export const translations: Record<Lang, Translation> = {
         {
           question: 'Do home visits cost more?',
           answer:
-            'A travel supplement may apply depending on the area. Fees are clearly communicated before the first session: contact us for an exact quote.',
+            'A travel supplement may apply depending on the area. Fees are clearly communicated before the first session.',
         },
         {
           question: 'Which payment methods do you accept?',
-          answer:
-            'Payment is made per session or as a package depending on your care plan. An invoice is provided for any reimbursement claim.',
+          answer: 'Payment is made per session or as a package depending on your care plan.',
         },
       ],
     },
@@ -524,20 +533,24 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'Contact',
       title: 'Book your appointment today',
       subtitle: 'One message is all it takes. Describe what you need and we will reply quickly.',
-      phoneLabel: 'Phone',
+      phoneLabel: 'Mobile',
       whatsappLabel: 'WhatsApp',
       whatsappHint: 'Fast replies, Monday to Saturday',
+      landlineLabel: 'Landline',
+      addressLabel: 'Address',
+      addressValue: '176 Bd Nil, 1st floor, Hay Mabrouka — Sidi Othmane, Casablanca',
+      mapsCta: 'Open in Google Maps',
+      locationShort: 'Sidi Othmane, Casablanca',
       hoursLabel: 'Opening hours',
       hoursValue: 'Monday to Saturday, by appointment',
-      locationLabel: 'Location',
-      locationValue: 'Casablanca — clinic and home visits',
       languagesLabel: 'Languages',
       languagesValue: 'French · Arabic · English',
+      followLabel: 'Follow us',
       ctaWhatsapp: 'Message on WhatsApp',
       ctaCall: 'Call now',
     },
     footer: {
-      tagline: 'Physiotherapy clinic in Casablanca — at the clinic and at home.',
+      tagline: 'Your health is our priority.',
       rights: 'All rights reserved.',
       disclaimer:
         'The information on this site does not replace medical advice. In an emergency, contact emergency services.',
@@ -548,13 +561,17 @@ export const translations: Record<Lang, Translation> = {
 
   ar: {
     meta: {
-      title: 'كينيزيتيرابي كازا — عيادة العلاج الطبيعي في الدار البيضاء | وليد',
+      title: 'مركز الترويض الطبي الكندري — الدار البيضاء، سيدي عثمان',
       description:
-        'عيادة العلاج الطبيعي في الدار البيضاء: إعادة التأهيل، العلاج الطبيعي الرياضي، آلام الظهر، الترويض التنفسي وحصص في المنزل. حجز سريع عبر الهاتف أو واتساب.',
+        'مركز الترويض الطبي في الدار البيضاء (سيدي عثمان): إعادة التأهيل، العلاج الطبيعي الرياضي، آلام الظهر، الوضعية وحصص في المنزل. حجز سريع عبر الهاتف أو واتساب.',
+    },
+    brand: {
+      line1: 'مركز الترويض الطبي',
+      line2: 'الكندري',
     },
     nav: {
       services: 'العلاجات',
-      about: 'المعالج',
+      about: 'المركز',
       approach: 'مسار العلاج',
       home: 'في المنزل',
       faq: 'الأسئلة الشائعة',
@@ -565,16 +582,16 @@ export const translations: Record<Lang, Translation> = {
       language: 'اللغة',
     },
     hero: {
-      eyebrow: 'عيادة العلاج الطبيعي · الدار البيضاء',
+      eyebrow: 'مركز الترويض الطبي · سيدي عثمان، الدار البيضاء',
       title: 'استعد حركتك،',
       highlight: 'بدون ألم.',
       subtitle:
-        'يرافقك وليد بعلاج طبيعي حديث وإنساني وفعّال: في العيادة أو مباشرة في منزلك بالدار البيضاء. تشخيص دقيق، خطة واضحة، ونتائج تشعر بها.',
+        'نرافقكم بعلاج طبيعي حديث وإنساني وفعّال: في المركز بسيدي عثمان أو مباشرة في منزلكم بالدار البيضاء. تشخيص دقيق، خطة واضحة، ونتائج تشعرون بها.',
       ctaWhatsapp: 'احجز عبر واتساب',
-      ctaCall: 'اتصل بالعيادة',
+      ctaCall: 'اتصل بالمركز',
       badgeHome: 'حصص في المنزل',
       badgeReply: 'رد سريع على واتساب',
-      imageAlt: 'قاعة علاج مضيئة في عيادة العلاج الطبيعي بالدار البيضاء',
+      imageAlt: 'قاعة علاج مضيئة في مركز الترويض الطبي بالدار البيضاء',
     },
     trust: [
       {
@@ -582,8 +599,8 @@ export const translations: Record<Lang, Translation> = {
         description: 'كل جلسة تُبنى على تشخيصك وأهدافك ووتيرتك.',
       },
       {
-        title: 'في العيادة أو في المنزل',
-        description: 'أنت تختار: في العيادة أو في منزلك، بنفس المعدات ونفس الجودة.',
+        title: 'في المركز أو في المنزل',
+        description: 'أنت تختار: في المركز أو في منزلك، بنفس المعدات ونفس الجودة.',
       },
       {
         title: 'مواعيد سريعة',
@@ -598,7 +615,7 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'علاجاتنا',
       title: 'رعاية شاملة تتناسب مع حالتك',
       subtitle:
-        'من الألم الحاد إلى العودة إلى الرياضة، ترافق العيادة الكبار والرياضيين وكبار السن بتقنيات يدوية ونشطة معتمدة.',
+        'من الألم الحاد إلى العودة إلى الرياضة، يرافق المركز الكبار والرياضيين وكبار السن بتقنيات يدوية ونشطة معتمدة.',
       items: [
         {
           title: 'إعادة التأهيل بعد الجراحة والإصابات',
@@ -616,9 +633,9 @@ export const translations: Record<Lang, Translation> = {
             'آلام أسفل الظهر، الرقبة، عرق النسا، التهاب الأوتار، الكتف المؤلم: تخفيف الألم، فهم السبب وتجنب تكراره.',
         },
         {
-          title: 'الترويض التنفسي',
+          title: 'الوضعية والأرغونوميا والوقاية',
           description:
-            'تنظيف الشعب الهوائية وإعادة تأهيل التنفس للرضّع والأطفال والكبار، في الحالات الحادة أو المزمنة.',
+            'تحليل الوضعية، نصائح أرغونومية (المكتب، العمل عن بُعد، حركات الحياة اليومية) وبرامج وقائية حتى لا يعود الألم.',
         },
         {
           title: 'إعادة التأهيل العصبي',
@@ -627,18 +644,18 @@ export const translations: Record<Lang, Translation> = {
         },
         {
           title: 'العلاج الطبيعي لكبار السن',
-          description: 'التوازن، الوقاية من السقوط، الحفاظ على الحركة والاستقلالية، في العيادة أو في المنزل.',
+          description: 'التوازن، الوقاية من السقوط، الحفاظ على الحركة والاستقلالية، في المركز أو في المنزل.',
         },
       ],
       note: 'لم تجد ما تحتاجه؟ راسلنا على واتساب وسنوجهك.',
     },
     about: {
-      eyebrow: 'معالجك الطبيعي',
-      title: 'وليد: حيوية معالج شاب، وإصغاء شريك حقيقي',
+      eyebrow: 'المركز',
+      title: 'صحتكم أولويتنا',
       paragraphs: [
-        'معالج طبيعي في الدار البيضاء، يؤمن وليد بفكرة بسيطة: نتعافى بشكل أفضل عندما نفهم ما يحدث في أجسامنا وعندما نتقدم مع شخص يؤمن بذلك مثلنا.',
-        'تجمع ممارسته بين العلاج اليدوي والتمارين النشطة وتوعية المريض. لا جلسات روتينية: لكل موعد هدف، وكل تقدم يُقاس، والخطة تتكيف مع تطورك.',
-        'ديناميكي، صريح ومتعاطف، يرافق الرياضي المتعجل للعودة كما يرافق من يرغب ببساطة في حياة يومية بلا ألم.',
+        'في مركز الترويض الطبي الكندري بسيدي عثمان، ننطلق من قناعة بسيطة: نتعافى بشكل أفضل عندما نفهم ما يحدث في أجسامنا وعندما نتقدم مع فريق يؤمن بذلك مثلنا.',
+        'تجمع ممارستنا بين العلاج اليدوي والتمارين النشطة وتوعية المريض. لا جلسات روتينية: لكل موعد هدف، وكل تقدم يُقاس، والخطة تتكيف مع تطورك.',
+        'بحيوية وصراحة وتعاطف، نرافق الرياضي المتعجل للعودة كما نرافق من يرغب ببساطة في حياة يومية بلا ألم — في المركز أو في المنزل.',
       ],
       values: [
         {
@@ -654,8 +671,6 @@ export const translations: Record<Lang, Translation> = {
           description: 'تشخيص أولي، أهداف واضحة، تقييمات منتظمة وتمارين منزلية مناسبة.',
         },
       ],
-      imageAlt: 'صورة وليد، معالج طبيعي في الدار البيضاء',
-      quote: '«دوري ليس فقط تخفيف الألم، بل أن أجعلك مستقلًا وواثقًا في جسدك.»',
     },
     approach: {
       eyebrow: 'مسار العلاج',
@@ -678,18 +693,18 @@ export const translations: Record<Lang, Translation> = {
             'تتلقى تمارين بسيطة لتقوم بها في المنزل، مع متابعة عبر واتساب للبقاء على المسار الصحيح وتجنب الانتكاس.',
         },
       ],
-      imageAlt: 'جلسة علاج يدوي للكتف في العيادة',
+      imageAlt: 'جلسة علاج يدوي للكتف في المركز',
     },
     home: {
       eyebrow: 'حصص في المنزل',
       title: 'نفس جودة الرعاية، مباشرة في منزلك بالدار البيضاء',
       subtitle:
-        'حركة محدودة، خروج من المستشفى، جدول مزدحم أو مجرد تفضيل: ينتقل المعالج إليك بالمعدات اللازمة.',
+        'حركة محدودة، خروج من المستشفى، جدول مزدحم أو مجرد تفضيل: ينتقل فريقنا إليك بالمعدات اللازمة.',
       points: [
         'التنقل داخل الدار البيضاء وضواحيها',
         'معدات مهنية تُنقل في كل جلسة',
         'مواعيد نهارية وفي بداية المساء حسب التوفر',
-        'مثالي لكبار السن، وإعادة التأهيل بعد الجراحة، والترويض التنفسي',
+        'مثالي لكبار السن وإعادة التأهيل بعد الجراحة',
       ],
       cta: 'اطلب حصة في المنزل',
       imageAlt: 'طاولة علاج طبيعي محمولة في صالة منزل مضيئة',
@@ -712,7 +727,7 @@ export const translations: Record<Lang, Translation> = {
         {
           question: 'كيف أحجز موعدًا؟',
           answer:
-            'أسهل طريقة هي إرسال رسالة واتساب أو الاتصال بالعيادة. حدد حاجتك وأوقاتك المتاحة، وسنقترح عليك بسرعة موعدًا في العيادة أو في المنزل.',
+            'أسهل طريقة هي إرسال رسالة واتساب أو الاتصال بالمركز. حدد حاجتك وأوقاتك المتاحة، وسنقترح عليك بسرعة موعدًا في المركز أو في المنزل.',
         },
         {
           question: 'ماذا أحضر معي وكيف ألبس؟',
@@ -721,12 +736,11 @@ export const translations: Record<Lang, Translation> = {
         },
         {
           question: 'هل الحصص المنزلية أغلى؟',
-          answer:
-            'قد تُطبق زيادة للتنقل حسب المنطقة. تُبلَّغ الأسعار بوضوح قبل الجلسة الأولى: تواصل معنا للحصول على تقدير دقيق.',
+          answer: 'قد تُطبق زيادة للتنقل حسب المنطقة. تُبلَّغ الأسعار بوضوح قبل الجلسة الأولى.',
         },
         {
           question: 'ما وسائل الدفع المقبولة؟',
-          answer: 'يتم الدفع في كل جلسة أو على شكل باقة حسب خطة علاجك. تُسلَّم لك فاتورة لأي تعويض محتمل.',
+          answer: 'يتم الدفع في كل جلسة أو على شكل باقة حسب خطة علاجك.',
         },
       ],
     },
@@ -734,20 +748,24 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'اتصل بنا',
       title: 'احجز موعدك اليوم',
       subtitle: 'رسالة واحدة تكفي للحصول على موعد. صف حاجتك ونرد عليك بسرعة.',
-      phoneLabel: 'الهاتف',
+      phoneLabel: 'الهاتف المحمول',
       whatsappLabel: 'واتساب',
       whatsappHint: 'رد سريع، من الاثنين إلى السبت',
+      landlineLabel: 'الهاتف الثابت',
+      addressLabel: 'العنوان',
+      addressValue: '176 شارع النيل، الطابق الأول، حي المبروكة — سيدي عثمان، الدار البيضاء',
+      mapsCta: 'افتح في خرائط جوجل',
+      locationShort: 'سيدي عثمان، الدار البيضاء',
       hoursLabel: 'أوقات العمل',
       hoursValue: 'من الاثنين إلى السبت، بموعد مسبق',
-      locationLabel: 'الموقع',
-      locationValue: 'الدار البيضاء — العيادة والتنقل إلى المنازل',
       languagesLabel: 'اللغات',
       languagesValue: 'الفرنسية · العربية · الإنجليزية',
+      followLabel: 'تابعونا',
       ctaWhatsapp: 'راسلنا على واتساب',
       ctaCall: 'اتصل الآن',
     },
     footer: {
-      tagline: 'عيادة العلاج الطبيعي في الدار البيضاء — في العيادة وفي المنزل.',
+      tagline: 'صحتكم أولويتنا.',
       rights: 'جميع الحقوق محفوظة.',
       disclaimer: 'المعلومات في هذا الموقع لا تعوض الاستشارة الطبية. في حالة الطوارئ، اتصل بخدمات الإسعاف.',
     },
@@ -757,13 +775,17 @@ export const translations: Record<Lang, Translation> = {
 
   zgh: {
     meta: {
-      title: 'ⴽⵉⵏⵉⵣⵉⵜⵉⵔⴰⴱⵉ ⴽⴰⵣⴰ — ⴰⵙⴰⵢⵔⴰⵔ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ | ⵡⴰⵍⵉⴷ',
+      title: 'ⴰⵎⵎⴰⵙ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⵍⴽⴰⵏⴷⴰⵔⵉ — ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ, ⵙⵉⴷⵉ ⵄⵜⵎⴰⵏ',
       description:
-        'ⴰⵙⴰⵢⵔⴰⵔ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ: ⴰⵙⵓⵊⵊⵉ ⵏ ⵓⵣⴰⴳⵓⵔ, ⴰⴷⴷⴰⵍ, ⵓⵏⴼⴰⵙ ⴷ ⵜⵖⵉⵎⵉⵜⵉⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ. ⴰⵎⵙⴰⴳⴰⵔ ⵙ ⵜⵜⵉⵍⵉⴼⵓⵏ ⵏⵖ ⵡⴰⵜⵙⴰⴱ.',
+        'ⴰⵎⵎⴰⵙ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ (ⵙⵉⴷⵉ ⵄⵜⵎⴰⵏ): ⴰⵙⵓⵊⵊⵉ ⵏ ⵓⵣⴰⴳⵓⵔ, ⴰⴷⴷⴰⵍ, ⵜⴰⴱⴷⴷⵉ ⴷ ⵜⵖⵉⵎⵉⵜⵉⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ. ⴰⵎⵙⴰⴳⴰⵔ ⵙ ⵜⵜⵉⵍⵉⴼⵓⵏ ⵏⵖ ⵡⴰⵜⵙⴰⴱ.',
+    },
+    brand: {
+      line1: 'Centre de Kinésithérapie',
+      line2: 'El Kandari',
     },
     nav: {
       services: 'ⴰⵙⵓⵊⵊⵉ',
-      about: 'ⴰⵎⵙⵓⵊⵊⵉ',
+      about: 'ⴰⵎⵎⴰⵙ',
       approach: 'ⵎⴰⵎⴽ ⵜⵜⵉⵍⵉ',
       home: 'ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
       faq: 'ⵉⵙⵇⵙⵉⵜⵏ',
@@ -774,13 +796,13 @@ export const translations: Record<Lang, Translation> = {
       language: 'ⵜⵓⵜⵍⴰⵢⵜ',
     },
     hero: {
-      eyebrow: 'ⴰⵙⴰⵢⵔⴰⵔ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ · ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
+      eyebrow: 'ⴰⵎⵎⴰⵙ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ · ⵙⵉⴷⵉ ⵄⵜⵎⴰⵏ, ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
       title: 'ⵔⴰⵔ ⴰⵎⵓⵙⵙⵓ ⵏⵏⴽ,',
       highlight: 'ⴱⵍⴰ ⴰⵇⵔⴰⵃ.',
       subtitle:
-        'ⵡⴰⵍⵉⴷ ⴰⴷ ⴽ ⵢⵉⵍⵉ ⵜⴰⵎⴰ ⵙ ⵢⴰⵏ ⵓⵙⵓⵊⵊⵉ ⴰⵜⵔⴰⵔ, ⴰⵏⴰⴼⴳⴰⵏ ⴷ ⵉⵎⵓⵔⵙⵏ: ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ. ⴰⵙⵙⵜⴳ ⵉⵖⵓⴷⴰⵏ, ⴰⵖⴰⵡⴰⵙ ⵉⴼⴰⵡⵏ, ⴷ ⵉⴳⵎⴰⴹ ⵜⵜⵃⵓⵙⵙⵓⵜ.',
+        'ⵏⵜⵜⵉⵍⵉ ⵜⴰⵎⴰ ⵏⵏⴽ ⵙ ⵢⴰⵏ ⵓⵙⵓⵊⵊⵉ ⴰⵜⵔⴰⵔ, ⴰⵏⴰⴼⴳⴰⵏ ⴷ ⵉⵎⵓⵔⵙⵏ: ⴳ ⵡⴰⵎⵎⴰⵙ ⴳ ⵙⵉⴷⵉ ⵄⵜⵎⴰⵏ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ. ⴰⵙⵙⵜⴳ ⵉⵖⵓⴷⴰⵏ, ⴰⵖⴰⵡⴰⵙ ⵉⴼⴰⵡⵏ, ⴷ ⵉⴳⵎⴰⴹ ⵜⵜⵃⵓⵙⵙⵓⵜ.',
       ctaWhatsapp: 'ⴰⵡⵉ ⴰⵎⵙⴰⴳⴰⵔ ⴳ ⵡⴰⵜⵙⴰⴱ',
-      ctaCall: 'ⵖⵔ ⵉ ⵓⵙⴰⵢⵔⴰⵔ',
+      ctaCall: 'ⵖⵔ ⵉ ⵡⴰⵎⵎⴰⵙ',
       badgeHome: 'ⵜⵉⵖⵉⵎⵉⵜⵉⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
       badgeReply: 'ⵜⵉⵔⵔⴰⵔⵜ ⵜⴰⵣⵔⴱⴰⵏⵜ ⴳ ⵡⴰⵜⵙⴰⴱ',
       imageAlt: 'ⵜⴰⵃⴰⵏⵓⵜ ⵏ ⵓⵙⵓⵊⵊⵉ ⵉⴼⴰⵡⵏ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
@@ -791,8 +813,8 @@ export const translations: Record<Lang, Translation> = {
         description: 'ⴽⵓ ⵜⵉⵖⵉⵎⵉⵜ ⵜⴱⴷⴷ ⵅⴼ ⵓⵙⵙⵜⴳ ⵏⵏⴽ, ⵉⵡⵜⵜⴰⵙⵏ ⵏⵏⴽ ⴷ ⵓⵏⵣⴳⵓⵎ ⵏⵏⴽ.',
       },
       {
-        title: 'ⴰⵙⴰⵢⵔⴰⵔ ⵏⵖ ⵜⴰⴷⴷⴰⵔⵜ',
-        description: 'ⴽⵢⵢⵉ ⴰⴷ ⵉⵙⵜⵉⵏ: ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ, ⵙ ⵢⴰⵏ ⵓⵎⴰⵙⵙⵏ ⴷ ⵢⴰⵜ ⵜⵖⵓⴷⵉ.',
+        title: 'ⴳ ⵡⴰⵎⵎⴰⵙ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
+        description: 'ⴽⵢⵢⵉ ⴰⴷ ⵉⵙⵜⵉⵏ: ⴳ ⵡⴰⵎⵎⴰⵙ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ, ⵙ ⵢⴰⵏ ⵓⵎⴰⵙⵙⵏ ⴷ ⵢⴰⵜ ⵜⵖⵓⴷⵉ.',
       },
       {
         title: 'ⵉⵎⵙⴰⴳⴰⵔⵏ ⵉⵣⵔⴱⴰⵏⵏ',
@@ -807,7 +829,7 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'ⴰⵙⵓⵊⵊⵉ ⵏⵏⵖ',
       title: 'ⴰⵙⵓⵊⵊⵉ ⵉⵙⵎⴷⵏ, ⵉⵎⵙⴰⵙⴰⵏ ⴷ ⵡⴰⴷⴷⴰⴷ ⵏⵏⴽ',
       subtitle:
-        'ⵙⴳ ⵓⵇⵔⴰⵃ ⴰⵔ ⵜⵓⵖⵓⵍⵜ ⵙ ⵡⴰⴷⴷⴰⵍ, ⵏⵜⵜⵉⵍⵉ ⵜⴰⵎⴰ ⵏ ⵉⵎⵇⵇⵔⴰⵏⵏ, ⵉⵎⴰⴷⴷⴰⵍⵏ ⴷ ⵉⵎⵖⴰⵔⵏ ⵙ ⵜⵉⴳⴳⵉⵜⵉⵏ ⵏ ⵓⴼⵓⵙ ⴷ ⵓⵎⵓⵙⵙⵓ ⵉⵜⵜⵓⵙⵙⴰⵏⵏ.',
+        'ⵙⴳ ⵓⵇⵔⴰⵃ ⴰⵔ ⵜⵓⵖⵓⵍⵜ ⵙ ⵡⴰⴷⴷⴰⵍ, ⵉⵜⵜⵉⵍⵉ ⵡⴰⵎⵎⴰⵙ ⵜⴰⵎⴰ ⵏ ⵉⵎⵇⵇⵔⴰⵏⵏ, ⵉⵎⴰⴷⴷⴰⵍⵏ ⴷ ⵉⵎⵖⴰⵔⵏ ⵙ ⵜⵉⴳⴳⵉⵜⵉⵏ ⵏ ⵓⴼⵓⵙ ⴷ ⵓⵎⵓⵙⵙⵓ ⵉⵜⵜⵓⵙⵙⴰⵏⵏ.',
       items: [
         {
           title: 'ⴰⵙⵓⵊⵊⵉ ⴷⴼⴼⵉⵔ ⵜⵡⵓⵔⵉ ⵜⴰⵎⵙⵓⵊⵊⵉⵜ ⴷ ⵉⵎⴰⵟⵟⴰⵍⵏ',
@@ -825,8 +847,9 @@ export const translations: Record<Lang, Translation> = {
             'ⴰⵇⵔⴰⵃ ⵏ ⵓⵣⴰⴳⵓⵔ, ⵏ ⵓⵎⴳⴳⵔⴹ, ⵏ ⵜⵖⵔⵓⴹⵜ: ⵙⴼⵙⵓⵙ ⴰⵇⵔⴰⵃ, ⵙⵙⵏ ⴰⵙⵔⴰⴳ ⵏⵏⵙ, ⴷ ⵓⵔ ⵜ ⵜⴰⵊⵊⵜ ⴰⴷ ⵢⴰⵖⵓⵍ.',
         },
         {
-          title: 'ⴰⵙⵓⵊⵊⵉ ⵏ ⵓⵏⴼⴰⵙ',
-          description: 'ⴰⵙⵉⵣⴷⴳ ⵏ ⵜⵓⵔⵉⵏ ⴷ ⵓⵙⵓⵊⵊⵉ ⵏ ⵓⵏⴼⴰⵙ ⵉ ⵉⵍⵓⴼⴰⵏⵏ, ⵉⵎⵥⵥⵢⴰⵏⵏ ⴷ ⵉⵎⵇⵇⵔⴰⵏⵏ.',
+          title: 'ⵜⴰⴱⴷⴷⵉ, ⴰⵎⵙⴰⵙⴰ ⵏ ⵜⵡⵓⵔⵉ ⴷ ⵓⵃⵟⵟⵓ',
+          description:
+            'ⴰⵙⵙⵜⴳ ⵏ ⵜⴱⴷⴷⵉ, ⵉⵙⵡⵉⵏⴳⵉⵎⵏ ⵉ ⵜⵡⵓⵔⵉ (ⴰⴱⵢⵓⵔⵓ, ⵜⴰⵡⵓⵔⵉ ⵙⴳ ⵜⴰⴷⴷⴰⵔⵜ, ⵉⵎⵓⵙⵙⵓⵜⵏ ⵏ ⴽⵓ ⴰⵙⵙ) ⴷ ⵉⵖⴰⵡⴰⵙⵏ ⵏ ⵓⵃⵟⵟⵓ ⵃⵎⴰ ⵓⵔ ⵢⴰⵖⵓⵍ ⵓⵇⵔⴰⵃ.',
         },
         {
           title: 'ⴰⵙⵓⵊⵊⵉ ⴰⵏⵓⵔⵓⵍⵓⵊⵉ',
@@ -835,18 +858,18 @@ export const translations: Record<Lang, Translation> = {
         },
         {
           title: 'ⴰⵙⵓⵊⵊⵉ ⵏ ⵉⵎⵖⴰⵔⵏ',
-          description: 'ⴰⵎⵙⴰⵙⴰ, ⴰⵃⵟⵟⵓ ⵙⴳ ⵜⵢⵢⵉⵜⴰ ⵏ ⵡⴰⴽⴰⵍ, ⴰⵎⵓⵙⵙⵓ ⴷ ⵜⴷⵔⴼⵉⵜ, ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
+          description: 'ⴰⵎⵙⴰⵙⴰ, ⴰⵃⵟⵟⵓ ⵙⴳ ⵜⵢⵢⵉⵜⴰ ⵏ ⵡⴰⴽⴰⵍ, ⴰⵎⵓⵙⵙⵓ ⴷ ⵜⴷⵔⴼⵉⵜ, ⴳ ⵡⴰⵎⵎⴰⵙ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
         },
       ],
       note: 'ⵓⵔ ⵜⵓⴼⵉⵜ ⵎⴰⴷ ⵜⵔⵉⵜ? ⴰⵔⴰ ⴰⵖ ⴳ ⵡⴰⵜⵙⴰⴱ, ⵔⴰⴷ ⴰⴽ ⵏⵎⵍ ⴰⴱⵔⵉⴷ.',
     },
     about: {
-      eyebrow: 'ⴰⵎⵙⵓⵊⵊⵉ ⵏⵏⴽ',
-      title: 'ⵡⴰⵍⵉⴷ: ⵜⴰⵣⵎⵔⵜ ⵏ ⵢⴰⵏ ⵓⵎⵙⵓⵊⵊⵉ ⴰⵎⵥⵥⵢⴰⵏ, ⴰⵙⴼⵍⴷ ⵏ ⵢⴰⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ ⵏ ⵜⵉⴷⵜ',
+      eyebrow: 'ⴰⵎⵎⴰⵙ',
+      title: 'ⵜⴰⴷⵓⵙⵉ ⵏⵏⴽ ⵜⴳⴰ ⴰⵎⵣⵡⴰⵔⵓ ⵏⵏⵖ',
       paragraphs: [
-        'ⴰⵎⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ, ⵡⴰⵍⵉⴷ ⵢⵓⵎⵏ ⵙ ⵢⴰⵜ ⵜⵖⴰⵔⴰⵙⵜ ⵜⴰⴼⵙⵓⵙⵜ: ⵏⵊⵊⵉ ⵓⴳⴳⴰⵔ ⵉⵖ ⵏⵙⵙⵏ ⵎⴰⴷ ⵉⵜⵜⵎⵙⴰⵔⵏ ⴳ ⵜⴼⴽⴽⴰ ⵏⵏⵖ ⴷ ⵉⵖ ⵏⴷⴷⴰ ⴷ ⵢⴰⵏ ⵢⵓⵎⵏ ⵙⵔⵙ ⵣⵓⵏⴷ ⵏⴽⴽⵏⵉ.',
-        'ⵜⴰⵡⵓⵔⵉ ⵏⵏⵙ ⵜⵙⵎⵓⵏ ⴰⵙⵓⵊⵊⵉ ⵙ ⵓⴼⵓⵙ, ⵉⵍⵓⵖⵎⴰ ⴷ ⵓⵙⵙⵍⵎⴷ ⵏ ⵓⵎⵓⴹⵉⵏ. ⵓⵔ ⵍⵍⵉⵏⵜ ⵜⵖⵉⵎⵉⵜⵉⵏ ⵣⵓⵏⴷ ⵜⵉⵢⴰⴹ: ⴽⵓ ⴰⵎⵙⴰⴳⴰⵔ ⵖⵓⵔⵙ ⴰⵡⵜⵜⴰⵙ, ⴽⵓ ⴰⵙⵙⴰⵔⵓ ⵉⵜⵜⵓⵙⵖⴰⵍ, ⴷ ⵓⵖⴰⵡⴰⵙ ⵉⵜⵜⵎⵙⴰⵙⴰ ⴷ ⵓⵙⵙⴰⵔⵓ ⵏⵏⴽ.',
-        'ⵉⵎⵓⵙⵙⵓ, ⵉⵏⵏⴰ ⵜⵉⴷⵜ, ⵉⵃⵏⵏⴰ: ⴰⵔ ⵉⵜⵜⵉⵍⵉ ⵜⴰⵎⴰ ⵏ ⵓⵎⴰⴷⴷⴰⵍ ⵉⵔⴰⵏ ⴰⴷ ⵢⴰⵖⵓⵍ ⵙ ⵣⵔⴱ, ⴷ ⵡⴰⵏⵏⴰ ⵉⵔⴰⵏ ⵖⴰⵙ ⵜⵓⴷⵔⵜ ⴱⵍⴰ ⴰⵇⵔⴰⵃ.',
+        'ⴳ ⵡⴰⵎⵎⴰⵙ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⵍⴽⴰⵏⴷⴰⵔⵉ ⴳ ⵙⵉⴷⵉ ⵄⵜⵎⴰⵏ, ⵏⴱⴷⴰ ⵙⴳ ⵢⴰⵜ ⵜⵖⴰⵔⴰⵙⵜ ⵜⴰⴼⵙⵓⵙⵜ: ⵏⵊⵊⵉ ⵓⴳⴳⴰⵔ ⵉⵖ ⵏⵙⵙⵏ ⵎⴰⴷ ⵉⵜⵜⵎⵙⴰⵔⵏ ⴳ ⵜⴼⴽⴽⴰ ⵏⵏⵖ ⴷ ⵉⵖ ⵏⴷⴷⴰ ⴷ ⵢⴰⵜ ⵜⵔⴰⴱⴱⵓⵜ ⵢⵓⵎⵏⵏ ⵙⵔⵙ ⵣⵓⵏⴷ ⵏⴽⴽⵏⵉ.',
+        'ⵜⴰⵡⵓⵔⵉ ⵏⵏⵖ ⵜⵙⵎⵓⵏ ⴰⵙⵓⵊⵊⵉ ⵙ ⵓⴼⵓⵙ, ⵉⵍⵓⵖⵎⴰ ⴷ ⵓⵙⵙⵍⵎⴷ ⵏ ⵓⵎⵓⴹⵉⵏ. ⵓⵔ ⵍⵍⵉⵏⵜ ⵜⵖⵉⵎⵉⵜⵉⵏ ⵣⵓⵏⴷ ⵜⵉⵢⴰⴹ: ⴽⵓ ⴰⵎⵙⴰⴳⴰⵔ ⵖⵓⵔⵙ ⴰⵡⵜⵜⴰⵙ, ⴽⵓ ⴰⵙⵙⴰⵔⵓ ⵉⵜⵜⵓⵙⵖⴰⵍ, ⴷ ⵓⵖⴰⵡⴰⵙ ⵉⵜⵜⵎⵙⴰⵙⴰ ⴷ ⵓⵙⵙⴰⵔⵓ ⵏⵏⴽ.',
+        'ⵙ ⵜⵣⵎⵔⵜ, ⵜⵉⴷⵜ ⴷ ⵜⵃⵏⵏⴰ, ⵏⵜⵜⵉⵍⵉ ⵜⴰⵎⴰ ⵏ ⵓⵎⴰⴷⴷⴰⵍ ⵉⵔⴰⵏ ⴰⴷ ⵢⴰⵖⵓⵍ ⵙ ⵣⵔⴱ, ⴷ ⵡⴰⵏⵏⴰ ⵉⵔⴰⵏ ⵖⴰⵙ ⵜⵓⴷⵔⵜ ⴱⵍⴰ ⴰⵇⵔⴰⵃ — ⴳ ⵡⴰⵎⵎⴰⵙ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
       ],
       values: [
         {
@@ -862,8 +885,6 @@ export const translations: Record<Lang, Translation> = {
           description: 'ⴰⵙⵙⵜⴳ ⴰⵎⵣⵡⴰⵔⵓ, ⵉⵡⵜⵜⴰⵙⵏ ⵉⴼⴰⵡⵏ, ⴰⵙⵙⵜⴳ ⴽⵓ ⵜⵉⵣⵉ ⴷ ⵉⵍⵓⵖⵎⴰ ⵉⵎⵙⴰⵙⴰⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
         },
       ],
-      imageAlt: 'ⵜⴰⵡⵍⴰⴼⵜ ⵏ ⵡⴰⵍⵉⴷ, ⴰⵎⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
-      quote: '« ⵜⴰⵡⵓⵔⵉ ⵏⵓ ⵓⵔ ⵜⴳⵉ ⵖⴰⵙ ⴰⵙⴼⵙⵓⵙ ⵏ ⵓⵇⵔⴰⵃ: ⵜⴳⴰ ⴰⴷ ⴽ ⵙⵙⴷⵔⴼⵉⵖ ⴷ ⴰⴷ ⵜⴰⵎⵏⵜ ⵙ ⵜⴼⴽⴽⴰ ⵏⵏⴽ. »',
     },
     approach: {
       eyebrow: 'ⵎⴰⵎⴽ ⵜⵜⵉⵍⵉ',
@@ -886,18 +907,18 @@ export const translations: Record<Lang, Translation> = {
             'ⵜⵜⴰⵡⵉⵜ ⵉⵍⵓⵖⵎⴰ ⵉⴼⵙⵓⵙⵏ ⴰⴷ ⵜⵏ ⵜⵙⴽⵔⵜ ⴳ ⵜⴰⴷⴷⴰⵔⵜ, ⵙ ⵓⴹⴼⴰⵕ ⴳ ⵡⴰⵜⵙⴰⴱ ⵃⵎⴰ ⴰⴷ ⵜⵇⵇⵉⵎⵜ ⴳ ⵓⴱⵔⵉⴷ ⵉⵖⵓⴷⴰⵏ.',
         },
       ],
-      imageAlt: 'ⵜⵉⵖⵉⵎⵉⵜ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⴼⵓⵙ ⵏ ⵜⵖⵔⵓⴹⵜ ⴳ ⵓⵙⴰⵢⵔⴰⵔ',
+      imageAlt: 'ⵜⵉⵖⵉⵎⵉⵜ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⴼⵓⵙ ⵏ ⵜⵖⵔⵓⴹⵜ ⴳ ⵡⴰⵎⵎⴰⵙ',
     },
     home: {
       eyebrow: 'ⵜⵉⵖⵉⵎⵉⵜⵉⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
       title: 'ⵜⵉⵖⵓⴷⵉ ⵏ ⵓⵙⵓⵊⵊⵉ ⵏⵏⵉⵜ, ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
       subtitle:
-        'ⴰⵎⵓⵙⵙⵓ ⵉⴷⵔⵓⵙⵏ, ⵜⵓⴼⴼⵖⴰ ⵙⴳ ⵓⵙⴳⵏⴰⴼ, ⴰⴽⵓⴷ ⵉⵄⵎⵕⵏ ⵏⵖ ⵖⴰⵙ ⵜⵉⵔⴰⵜ: ⴰⵎⵙⵓⵊⵊⵉ ⴰⴷ ⴽ ⴷ ⵢⴰⵛⴽ ⵙ ⵓⵎⴰⵙⵙⵏ ⵉⵍⴰⵇⵏ.',
+        'ⴰⵎⵓⵙⵙⵓ ⵉⴷⵔⵓⵙⵏ, ⵜⵓⴼⴼⵖⴰ ⵙⴳ ⵓⵙⴳⵏⴰⴼ, ⴰⴽⵓⴷ ⵉⵄⵎⵕⵏ ⵏⵖ ⵖⴰⵙ ⵜⵉⵔⴰⵜ: ⵜⴰⵔⴰⴱⴱⵓⵜ ⵏⵏⵖ ⴰⴷ ⴽ ⴷ ⵜⴰⵛⴽ ⵙ ⵓⵎⴰⵙⵙⵏ ⵉⵍⴰⵇⵏ.',
       points: [
         'ⴰⵎⵓⴷⴷⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ ⴷ ⵎⴰ ⵜ ⵉⵏⵏⴹⵏ',
         'ⴰⵎⴰⵙⵙⵏ ⴰⵣⵣⵓⵍⴰⵏ ⵉⵜⵜⵓⵙⵎⵓⵜⵜⵉⵏ ⴳ ⴽⵓ ⵜⵉⵖⵉⵎⵉⵜ',
         'ⵉⵣⵎⴰⵣ ⴳ ⵡⴰⵙⵙ ⴷ ⵜⴰⵣⵡⴰⵔⴰ ⵏ ⵜⴷⴳⴳⵯⴰⵜ',
-        'ⵉⵖⵓⴷⴰ ⵉ ⵉⵎⵖⴰⵔⵏ, ⴰⵙⵓⵊⵊⵉ ⴷⴼⴼⵉⵔ ⵜⵡⵓⵔⵉ ⵜⴰⵎⵙⵓⵊⵊⵉⵜ ⴷ ⵓⵙⵓⵊⵊⵉ ⵏ ⵓⵏⴼⴰⵙ',
+        'ⵉⵖⵓⴷⴰ ⵉ ⵉⵎⵖⴰⵔⵏ ⴷ ⵓⵙⵓⵊⵊⵉ ⴷⴼⴼⵉⵔ ⵜⵡⵓⵔⵉ ⵜⴰⵎⵙⵓⵊⵊⵉⵜ',
       ],
       cta: 'ⵙⵓⵜⵔ ⵜⵉⵖⵉⵎⵉⵜ ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
       imageAlt: 'ⵜⴰⴷⴰⴱⵓⵜ ⵏ ⵓⵙⵓⵊⵊⵉ ⵉⵜⵜⵓⵙⵎⵓⵜⵜⵉⵏ ⴳ ⵢⴰⵜ ⵜⴰⴷⴷⴰⵔⵜ ⵉⴼⴰⵡⵏ',
@@ -921,7 +942,7 @@ export const translations: Record<Lang, Translation> = {
         {
           question: 'ⵎⴰⵎⴽ ⴰⴷ ⴰⵡⵉⵖ ⴰⵎⵙⴰⴳⴰⵔ?',
           answer:
-            'ⴰⴱⵔⵉⴷ ⵉⴼⵙⵓⵙⵏ ⵉⴳⴰ ⵜ ⴰⴷ ⵜⴰⵣⵏⵜ ⵜⴰⴱⵔⴰⵜ ⴳ ⵡⴰⵜⵙⴰⴱ ⵏⵖ ⴰⴷ ⵜⵖⵔⵜ ⵉ ⵓⵙⴰⵢⵔⴰⵔ. ⵉⵏⵉ ⴰⵖ ⵎⴰⴷ ⵜⵔⵉⵜ ⴷ ⵎⴰⵏⴰⴳⵓ ⵜⵣⵎⵔⵜ, ⵔⴰⴷ ⴰⴽ ⵏⴼⴽ ⵙ ⵣⵔⴱ ⴰⵣⵎⵣ ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
+            'ⴰⴱⵔⵉⴷ ⵉⴼⵙⵓⵙⵏ ⵉⴳⴰ ⵜ ⴰⴷ ⵜⴰⵣⵏⵜ ⵜⴰⴱⵔⴰⵜ ⴳ ⵡⴰⵜⵙⴰⴱ ⵏⵖ ⴰⴷ ⵜⵖⵔⵜ ⵉ ⵡⴰⵎⵎⴰⵙ. ⵉⵏⵉ ⴰⵖ ⵎⴰⴷ ⵜⵔⵉⵜ ⴷ ⵎⴰⵏⴰⴳⵓ ⵜⵣⵎⵔⵜ, ⵔⴰⴷ ⴰⴽ ⵏⴼⴽ ⵙ ⵣⵔⴱ ⴰⵣⵎⵣ ⴳ ⵡⴰⵎⵎⴰⵙ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
         },
         {
           question: 'ⵎⴰⴷ ⴰⴷ ⴰⵡⵉⵖ ⴷ ⵎⴰⵎⴽ ⴰⴷ ⵍⵙⵖ?',
@@ -931,11 +952,11 @@ export const translations: Record<Lang, Translation> = {
         {
           question: 'ⵉⵙ ⵜⵖⵍⴰⵏⵜ ⵜⵖⵉⵎⵉⵜⵉⵏ ⵏ ⵜⴰⴷⴷⴰⵔⵜ ⵓⴳⴳⴰⵔ?',
           answer:
-            'ⵉⵣⵎⵔ ⴰⴷ ⵢⵉⵍⵉ ⵢⴰⵏ ⵓⵔⵏⵓ ⵏ ⵓⵎⵓⴷⴷⵓ ⵙ ⵡⴰⵏⵙⴰ. ⵜⵜⵓⵎⵍⴰⵏ ⵡⴰⵜⵉⴳⵏ ⵙ ⵜⵉⴼⴰⵡⵜ ⴷⴰⵜ ⵜⵖⵉⵎⵉⵜ ⵜⴰⵎⵣⵡⴰⵔⵓⵜ: ⵎⵢⴰⵡⴰⴹ ⴰⵖ ⵉ ⵢⴰⵏ ⵓⵙⵙⵜⴳ ⵉⵖⵓⴷⴰⵏ.',
+            'ⵉⵣⵎⵔ ⴰⴷ ⵢⵉⵍⵉ ⵢⴰⵏ ⵓⵔⵏⵓ ⵏ ⵓⵎⵓⴷⴷⵓ ⵙ ⵡⴰⵏⵙⴰ. ⵜⵜⵓⵎⵍⴰⵏ ⵡⴰⵜⵉⴳⵏ ⵙ ⵜⵉⴼⴰⵡⵜ ⴷⴰⵜ ⵜⵖⵉⵎⵉⵜ ⵜⴰⵎⵣⵡⴰⵔⵓⵜ.',
         },
         {
           question: 'ⵎⴰⵏ ⵜⵖⴰⵔⴰⵙⵉⵏ ⵏ ⵓⴼⵔⴰ ⴰⴷ ⵜⵇⴱⵍⵎ?',
-          answer: 'ⴰⴼⵔⴰ ⵉⵜⵜⵉⵍⵉ ⴳ ⴽⵓ ⵜⵉⵖⵉⵎⵉⵜ ⵏⵖ ⵙ ⵓⵎⵓⵍⵍⵉ ⵙ ⵓⵖⴰⵡⴰⵙ ⵏⵏⴽ. ⵜⵜⴰⵡⵉⵜ ⵜⴰⴼⴰⵜⵓⵔⵜ ⵉ ⵓⵔⴰⵔ ⵏⵏⴽ.',
+          answer: 'ⴰⴼⵔⴰ ⵉⵜⵜⵉⵍⵉ ⴳ ⴽⵓ ⵜⵉⵖⵉⵎⵉⵜ ⵏⵖ ⵙ ⵓⵎⵓⵍⵍⵉ ⵙ ⵓⵖⴰⵡⴰⵙ ⵏⵏⴽ.',
         },
       ],
     },
@@ -943,20 +964,24 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'ⴰⵎⵢⴰⵡⴰⴹ',
       title: 'ⴰⵡⵉ ⴰⵎⵙⴰⴳⴰⵔ ⵏⵏⴽ ⵖⴰⵙⵙⴰ',
       subtitle: 'ⵢⴰⵜ ⵜⴱⵔⴰⵜ ⵜⵇⴰⴷⴰ ⵃⵎⴰ ⴰⴷ ⵜⴰⵡⵉⵜ ⴰⵣⵎⵣ. ⵉⵏⵉ ⴰⵖ ⵎⴰⴷ ⵜⵔⵉⵜ, ⵔⴰⴷ ⴰⴽ ⵏⵔⴰⵔ ⵙ ⵣⵔⴱ.',
-      phoneLabel: 'ⴰⵜⵉⵍⵉⴼⵓⵏ',
+      phoneLabel: 'ⴰⵜⵉⵍⵉⴼⵓⵏ ⴰⵎⵓⵜⵜⵉ',
       whatsappLabel: 'ⵡⴰⵜⵙⴰⴱ',
       whatsappHint: 'ⵜⵉⵔⵔⴰⵔⵜ ⵜⴰⵣⵔⴱⴰⵏⵜ, ⵙⴳ ⵡⴰⵢⵏⴰⵙ ⴰⵔ ⴰⵙⵉⴹⵢⴰⵙ',
+      landlineLabel: 'ⴰⵜⵉⵍⵉⴼⵓⵏ ⵏ ⵡⴰⵎⵎⴰⵙ',
+      addressLabel: 'ⵜⴰⵏⵙⴰ',
+      addressValue: '176 Bd Nil, 1er étage, Hay Mabrouka — Sidi Othmane, Casablanca',
+      mapsCta: 'ⵕⵥⵎ ⴳ Google Maps',
+      locationShort: 'ⵙⵉⴷⵉ ⵄⵜⵎⴰⵏ, ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
       hoursLabel: 'ⵉⵙⵔⴰⴳⵏ',
       hoursValue: 'ⵙⴳ ⵡⴰⵢⵏⴰⵙ ⴰⵔ ⴰⵙⵉⴹⵢⴰⵙ, ⵙ ⵓⵎⵙⴰⴳⴰⵔ',
-      locationLabel: 'ⴰⵏⵙⴰ',
-      locationValue: 'ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ — ⴰⵙⴰⵢⵔⴰⵔ ⴷ ⵉⵎⵓⴷⴷⵓⵜⵏ ⵙ ⵜⵓⴷⴷⴰⵔ',
       languagesLabel: 'ⵜⵓⵜⵍⴰⵢⵉⵏ',
       languagesValue: 'ⵜⴰⴼⵕⴰⵏⵙⵉⵙⵜ · ⵜⴰⵄⵔⴰⴱⵜ · ⵜⴰⵏⴳⵍⵉⵣⵜ',
+      followLabel: 'ⴹⴼⵕ ⴰⵖ',
       ctaWhatsapp: 'ⴰⵔⴰ ⴳ ⵡⴰⵜⵙⴰⴱ',
       ctaCall: 'ⵖⵔ ⵖⵉⵍⴰ',
     },
     footer: {
-      tagline: 'ⴰⵙⴰⵢⵔⴰⵔ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ — ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⴷ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
+      tagline: 'ⵜⴰⴷⵓⵙⵉ ⵏⵏⴽ ⵜⴳⴰ ⴰⵎⵣⵡⴰⵔⵓ ⵏⵏⵖ.',
       rights: 'ⴽⵓⵍⵍⵓ ⵉⵣⵔⴼⴰⵏ ⵜⵜⵓⵃⴹⴰⵏ.',
       disclaimer:
         'ⵉⵏⵖⵎⵉⵙⵏ ⵏ ⵡⴰⵙⵉⵜ ⴰⴷ ⵓⵔ ⵙⵎⵎⴽⵜⵉⵏ ⵜⴰⵏⵏⴰⵢⵜ ⵏ ⵓⵎⵙⵓⵊⵊⵉ. ⴳ ⵜⵎⵙⴰⵔⵜ ⵜⴰⵣⵔⴱⴰⵏⵜ, ⵖⵔ ⵉ ⵜⵏⴰⴼⵓⵜⵉⵏ ⵏ ⵜⵡⵉⵙⵉ ⵜⴰⵣⵔⴱⴰⵏⵜ.',

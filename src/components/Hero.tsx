@@ -1,4 +1,4 @@
-import { Phone, HousePlus, MessageCircleMore } from 'lucide-react'
+import { Phone, HousePlus, MessageCircleMore, MapPin } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { telHref, whatsappHref } from '@/lib/site'
 import { ButtonLink } from './ui/Button'
@@ -68,12 +68,10 @@ export function Hero() {
           </div>
           <div className="absolute -bottom-5 start-5 flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 shadow-float sm:start-8">
             <span className="flex size-10 items-center justify-center rounded-full bg-accent-soft text-accent-foreground">
-              <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>
+              <MapPin className="size-5" aria-hidden="true" />
             </span>
             <span className="flex flex-col leading-tight">
-              <span className="text-sm font-bold">{t.contact.locationValue.split(' — ')[0]}</span>
+              <span className="text-sm font-bold">{t.contact.locationShort}</span>
               <span className="text-xs text-muted-foreground">{t.contact.hoursValue}</span>
             </span>
           </div>
