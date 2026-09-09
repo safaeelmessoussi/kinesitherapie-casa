@@ -3,6 +3,8 @@
 Landing page du Centre de Kinésithérapie El Kandari (Sidi Othmane, Casablanca).
 Site statique React + Vite + Tailwind CSS v4, disponible en français, anglais, arabe et tamazight, déployé sur Cloudflare Pages.
 
+Production : https://centre-de-kinesitherapie-el-kandari.pages.dev
+
 ## Développement
 
 ```bash
