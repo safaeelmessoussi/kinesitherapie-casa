@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Affiche QR — Centre de Kinésithérapie El Kandari</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+Arabic:wght@600;700&family=Noto+Sans+Tifinagh&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fbf9f6;
+        --ink: #1f2841;
+        --muted: #626470;
+        --teal: #146f78;
+        --teal-soft: #e3f0f1;
+        --navy: #1f388a;
+        --sand: #b3925f;
+        --sand-soft: #f3ebdc;
+        --line: #e5ded4;
+        --white: #ffffff;
+        --wa: #1f9d55;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: 'Inter', system-ui, sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .page {
+        width: 210mm;
+        height: 297mm;
+        padding: 14mm 16mm 13mm;
+        display: flex;
+        flex-direction: column;
+        gap: 7mm;
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(120mm 90mm at 100% 0%, var(--teal-soft) 0%, transparent 70%),
+          radial-gradient(110mm 80mm at 0% 100%, var(--sand-soft) 0%, transparent 70%),
+          var(--bg);
+      }
+      .frame {
+        position: absolute;
+        inset: 7mm;
+        border: 0.6mm solid var(--line);
+        border-radius: 5mm;
+        pointer-events: none;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 7mm;
+      }
+      header img {
+        width: 30mm;
+        height: 30mm;
+        object-fit: contain;
+      }
+      .brand-fr {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 800;
+        font-size: 20pt;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+      }
+      .brand-fr span {
+        display: block;
+        color: var(--teal);
+      }
+      .brand-ar {
+        font-family: 'Noto Sans Arabic', sans-serif;
+        font-weight: 700;
+        font-size: 14.5pt;
+        color: var(--navy);
+        margin-top: 2mm;
+        direction: rtl;
+        text-align: left;
+      }
+      .rule {
+        height: 0.6mm;
+        background: linear-gradient(90deg, var(--teal), var(--sand));
+        border-radius: 1mm;
+        width: 32mm;
+      }
+      .headline {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 800;
+        font-size: 27pt;
+        line-height: 1.08;
+        letter-spacing: -0.015em;
+        max-width: 165mm;
+      }
+      .headline em {
+        font-style: normal;
+        color: var(--teal);
+      }
+      .sub {
+        font-size: 12.5pt;
+        line-height: 1.5;
+        color: var(--muted);
+        max-width: 160mm;
+      }
+      .qr-wrap {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .qr-card {
+        background: var(--white);
+        border: 0.5mm solid var(--line);
+        border-radius: 7mm;
+        padding: 8mm 10mm;
+        box-shadow: 0 10mm 20mm -14mm rgba(31, 40, 65, 0.35);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4.5mm;
+      }
+      .qr {
+        position: relative;
+        width: 78mm;
+        height: 78mm;
+      }
+      .qr svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .qr-logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 22mm;
+        height: 22mm;
+        background: var(--white);
+        border-radius: 4mm;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 0 1.4mm var(--white);
+      }
+      .qr-logo img {
+        width: 17mm;
+        height: 17mm;
+        object-fit: contain;
+      }
+      .scan {
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700;
+        font-size: 13pt;
+        color: var(--ink);
+        text-align: center;
+        line-height: 1.4;
+      }
+      .scan .ar {
+        display: block;
+        font-family: 'Noto Sans Arabic', sans-serif;
+        font-size: 12pt;
+        color: var(--navy);
+        direction: rtl;
+      }
+      .scan .en {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 10pt;
+        color: var(--muted);
+        margin-top: 1mm;
+      }
+      .url {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 10.5pt;
+        color: var(--teal);
+        letter-spacing: 0.01em;
+      }
+      .langs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3mm;
+      }
+      .langs span {
+        font-family: 'Inter', 'Noto Sans Arabic', 'Noto Sans Tifinagh', sans-serif;
+        font-size: 8.5pt;
+        font-weight: 600;
+        color: var(--muted);
+        border: 0.35mm solid var(--line);
+        border-radius: 999px;
+        padding: 0 3.5mm;
+        height: 7mm;
+        line-height: 7mm;
+        display: inline-flex;
+        align-items: center;
+        background: var(--bg);
+      }
+      footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4mm 8mm;
+        padding-top: 5mm;
+        border-top: 0.4mm solid var(--line);
+      }
+      .info {
+        display: flex;
+        align-items: flex-start;
+        gap: 3.5mm;
+        font-size: 10.5pt;
+        line-height: 1.4;
+        color: var(--ink);
+      }
+      .info svg {
+        width: 6mm;
+        height: 6mm;
+        flex: none;
+        color: var(--teal);
+        background: var(--teal-soft);
+        border-radius: 2mm;
+        padding: 1.2mm;
+      }
+      .info.wa svg {
+        color: var(--wa);
+        background: #e6f5ec;
+      }
+      .info b {
+        font-weight: 700;
+        display: block;
+      }
+      .info small {
+        color: var(--muted);
+        font-size: 9pt;
+      }
+      .tagline {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 700;
+        font-size: 11pt;
+        color: var(--sand);
+        letter-spacing: 0.02em;
+        padding-top: 2mm;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="frame" aria-hidden="true"></div>
+
+      <header>
+        <img src="/logo.png" alt="Logo du Centre de Kinésithérapie El Kandari" />
+        <div>
+          <div class="brand-fr">Centre de Kinésithérapie<span>El Kandari</span></div>
+          <div class="brand-ar">مركز الترويض الطبي الكندري</div>
+        </div>
+      </header>
+
+      <div class="rule" aria-hidden="true"></div>
+
+      <div>
+        <h1 class="headline">Retrouvez le mouvement, <em>sans la douleur.</em></h1>
+        <p class="sub" style="margin-top: 3mm">
+          Découvrez nos soins, nos horaires et prenez rendez-vous en quelques secondes depuis votre téléphone.
+        </p>
+      </div>
+
+      <div class="qr-wrap">
+        <div class="qr-card">
+          <div class="qr">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41" shape-rendering="crispEdges"><path stroke="#1f2841" d="M0 0.5h7m1 0h3m7 0h4m2 0h5m1 0h2m2 0h7M0 1.5h1m5 0h1m1 0h3m1 0h1m2 0h1m6 0h1m2 0h3m2 0h1m1 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m2 0h1m1 0h2m2 0h2m2 0h2m1 0h1m2 0h1m2 0h3m3 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h3m2 0h6m2 0h2m2 0h2m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h1m1 0h1m5 0h1m1 0h2m1 0h3m1 0h4m1 0h1m3 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h1m1 0h1m2 0h1m2 0h2m1 0h2m1 0h2m1 0h3m1 0h1m1 0h1m2 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 7.5h4m1 0h2m2 0h4m3 0h1m2 0h4M3 8.5h1m2 0h1m4 0h1m1 0h1m2 0h3m3 0h2m4 0h1m6 0h3m1 0h2M1 9.5h1m1 0h3m1 0h2m2 0h5m4 0h3m1 0h3m1 0h1m3 0h3m2 0h4M1 10.5h1m1 0h1m1 0h5m1 0h2m1 0h3m7 0h1m5 0h2m3 0h5M0 11.5h3m1 0h1m7 0h2m1 0h1m1 0h1m1 0h3m1 0h2m5 0h1m3 0h2m2 0h2M0 12.5h4m1 0h2m2 0h3m2 0h5m1 0h2m1 0h3m3 0h1m1 0h1m2 0h1m2 0h1m2 0h1M1 13.5h2m2 0h1m2 0h2m1 0h1m3 0h1m2 0h1m2 0h1m1 0h1m2 0h3m1 0h4m3 0h1m1 0h1M0 14.5h3m3 0h1m1 0h1m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m3 0h3m5 0h1m1 0h1m4 0h2M0 15.5h2m1 0h2m2 0h1m1 0h3m2 0h1m2 0h1m2 0h2m1 0h2m2 0h1m1 0h1m1 0h2m1 0h3m2 0h1M2 16.5h1m2 0h2m1 0h4m1 0h1m1 0h4m2 0h2m3 0h1m2 0h1m1 0h2m2 0h1m1 0h1M3 17.5h1m1 0h1m2 0h1m4 0h3m1 0h1m1 0h1m1 0h3m2 0h1m1 0h2m4 0h2m1 0h1m1 0h2M0 18.5h1m3 0h1m1 0h2m3 0h1m2 0h3m1 0h4m1 0h2m3 0h2m6 0h5M1 19.5h1m1 0h2m2 0h2m4 0h3m3 0h1m2 0h2m1 0h2m1 0h1m2 0h1m2 0h2m1 0h1m2 0h1M1 20.5h2m1 0h1m1 0h2m2 0h6m1 0h7m5 0h1m1 0h4m3 0h2M1 21.5h4m2 0h1m4 0h1m2 0h1m1 0h4m1 0h5m1 0h2m2 0h3m2 0h1m1 0h2M1 22.5h1m3 0h5m2 0h1m1 0h1m4 0h4m2 0h1m2 0h1m2 0h1m1 0h4m1 0h2M2 23.5h1m1 0h2m3 0h2m1 0h2m3 0h5m1 0h1m1 0h4m1 0h2m1 0h1m1 0h1m2 0h1M6 24.5h2m1 0h1m1 0h2m3 0h1m3 0h1m3 0h1m4 0h1m2 0h1m1 0h1m4 0h2M1 25.5h1m3 0h1m3 0h1m3 0h2m2 0h1m1 0h3m3 0h2m2 0h1m1 0h1m1 0h1m3 0h1M1 26.5h2m1 0h1m1 0h2m1 0h1m2 0h1m2 0h1m1 0h3m2 0h4m2 0h2m2 0h2m2 0h1m2 0h2M0 27.5h1m2 0h1m4 0h3m3 0h3m1 0h2m1 0h4m1 0h4m2 0h3m1 0h1m2 0h2M0 28.5h2m3 0h2m2 0h2m1 0h3m5 0h3m2 0h1m3 0h1m2 0h2m5 0h2M2 29.5h1m1 0h2m2 0h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h9m4 0h3m2 0h1m1 0h1M0 30.5h1m1 0h3m1 0h5m2 0h2m1 0h5m2 0h2m1 0h3m3 0h1m2 0h6M3 31.5h2m2 0h1m1 0h2m1 0h1m3 0h2m1 0h1m2 0h1m3 0h1m2 0h1m2 0h2m2 0h1m3 0h1M0 32.5h1m2 0h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m3 0h7m4 0h5m1 0h1m1 0h1M8 33.5h4m1 0h2m1 0h1m2 0h1m1 0h3m4 0h2m1 0h2m3 0h1m2 0h2M0 34.5h7m2 0h1m2 0h3m2 0h1m1 0h1m2 0h4m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1M0 35.5h1m5 0h1m4 0h1m1 0h1m1 0h3m1 0h1m3 0h3m1 0h1m2 0h1m1 0h1m3 0h3M0 36.5h1m1 0h3m1 0h1m2 0h3m1 0h1m3 0h3m1 0h1m2 0h3m1 0h1m1 0h1m1 0h5m2 0h2M0 37.5h1m1 0h3m1 0h1m1 0h4m1 0h1m2 0h2m3 0h2m1 0h2m4 0h2m1 0h2m1 0h2M0 38.5h1m1 0h3m1 0h1m3 0h1m1 0h3m1 0h1m3 0h1m3 0h3m1 0h1m2 0h2m3 0h3m1 0h1M0 39.5h1m5 0h1m6 0h2m3 0h2m1 0h1m1 0h1m3 0h1m1 0h1m1 0h2m1 0h2m3 0h1M0 40.5h7m3 0h1m5 0h1m4 0h1m2 0h6m2 0h1m1 0h4m1 0h1"/></svg>
+
+            <div class="qr-logo"><img src="/logo.png" alt="" /></div>
+          </div>
+          <div class="scan">
+            Scannez pour visiter notre site
+            <span class="ar">امسحوا الرمز لزيارة موقعنا</span>
+            <span class="en">Scan to visit our website</span>
+          </div>
+          <div class="url">centre-de-kinesitherapie-el-kandari.pages.dev</div>
+          <div class="langs">
+            <span>Français</span><span>English</span><span>العربية</span><span>ⵜⴰⵎⴰⵣⵉⵖⵜ</span>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="info wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z" />
+          </svg>
+          <div><b>06 64 200 260</b><small>WhatsApp &amp; appel</small></div>
+        </div>
+        <div class="info">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" />
+          </svg>
+          <div><b>05 29 574 290</b><small>Téléphone fixe</small></div>
+        </div>
+        <div class="info">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z" /><circle cx="12" cy="10" r="3" />
+          </svg>
+          <div><b>176 Bd Nil, 1er étage</b><small>Hay Mabrouka — Sidi Othmane, Casablanca</small></div>
+        </div>
+        <div class="info">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
+          </svg>
+          <div><b>Lundi – Samedi</b><small>Sur rendez-vous</small></div>
+        </div>
+        <div class="tagline">Votre santé est notre priorité</div>
+      </footer>
+    </main>
+  </body>
+</html>
