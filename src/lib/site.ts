@@ -8,8 +8,7 @@ export const site = {
   landlineE164: '+212529574290',
   landlineDisplay: '05 29 574 290',
   address: '176 Bd Nil, 1er étage, Hay Mabrouka, Sidi Othmane, Casablanca',
-  mapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=176+Boulevard+Nil+Hay+Mabrouka+Sidi+Othmane+Casablanca',
+  mapsUrl: 'https://www.google.com/maps?q=33.56248092651367,-7.562374114990234&z=17&hl=fr',
   url: 'https://kinesitherapie-casa.pages.dev',
   social: {
     tiktok: 'https://www.tiktok.com/@kinesitherapieelkandari',

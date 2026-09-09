@@ -1,3 +1,4 @@
+import { Smartphone, Phone, MapPin } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { site, telHref, landlineHref } from '@/lib/site'
 import { SocialLinks } from './SocialLinks'
@@ -36,19 +37,22 @@ export function Footer() {
 
           <div className="flex flex-col gap-3 text-sm">
             <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{t.nav.contact}</span>
-            <a href={telHref} dir="ltr" className="w-fit font-semibold text-foreground underline-offset-4 hover:underline">
-              {site.phoneDisplay}
+            <a href={telHref} className="flex w-fit items-center gap-2.5 font-semibold text-foreground underline-offset-4 hover:underline">
+              <Smartphone className="size-4 shrink-0 text-primary" aria-hidden="true" />
+              <span dir="ltr">{site.phoneDisplay}</span>
             </a>
-            <a href={landlineHref} dir="ltr" className="w-fit text-muted-foreground underline-offset-4 hover:underline">
-              {site.landlineDisplay}
+            <a href={landlineHref} className="flex w-fit items-center gap-2.5 text-muted-foreground underline-offset-4 hover:underline">
+              <Phone className="size-4 shrink-0 text-primary" aria-hidden="true" />
+              <span dir="ltr">{site.landlineDisplay}</span>
             </a>
             <a
               href={site.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-pretty leading-relaxed text-muted-foreground underline-offset-4 hover:underline"
+              className="flex items-start gap-2.5 text-pretty leading-relaxed text-muted-foreground underline-offset-4 hover:underline"
             >
-              {t.contact.addressValue}
+              <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+              <span>{t.contact.addressValue}</span>
             </a>
           </div>
 

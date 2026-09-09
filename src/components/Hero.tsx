@@ -1,6 +1,6 @@
 import { Phone, HousePlus, MessageCircleMore, MapPin } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
-import { telHref, whatsappHref } from '@/lib/site'
+import { site, telHref, whatsappHref } from '@/lib/site'
 import { ButtonLink } from './ui/Button'
 import { WhatsAppIcon } from './ui/WhatsAppIcon'
 
@@ -56,25 +56,31 @@ export function Hero() {
         </div>
 
         <div className="relative animate-fade-up [animation-delay:150ms]">
-          <div className="overflow-hidden rounded-2xl shadow-card">
+          <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-card">
             <img
-              src="/images/hero-cabinet.webp"
+              src="/images/hero-anatomie.webp"
               alt={t.hero.imageAlt}
-              width={1600}
-              height={900}
+              width={1400}
+              height={1400}
               fetchPriority="high"
               className="aspect-[4/3] w-full object-cover sm:aspect-[16/11]"
             />
           </div>
-          <div className="absolute -bottom-5 start-5 flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 shadow-float sm:start-8">
+          <a
+            href={site.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group absolute -bottom-5 start-5 flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 shadow-float transition-colors hover:border-primary sm:start-8"
+          >
             <span className="flex size-10 items-center justify-center rounded-full bg-accent-soft text-accent-foreground">
               <MapPin className="size-5" aria-hidden="true" />
             </span>
             <span className="flex flex-col leading-tight">
-              <span className="text-sm font-bold">{t.contact.locationShort}</span>
+              <span className="text-sm font-bold group-hover:text-primary">{t.contact.locationShort}</span>
               <span className="text-xs text-muted-foreground">{t.contact.hoursValue}</span>
             </span>
-          </div>
+            <span className="sr-only">{t.contact.mapsCta}</span>
+          </a>
         </div>
       </div>
     </section>

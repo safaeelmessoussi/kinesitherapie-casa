@@ -46,12 +46,12 @@ export function Header() {
     >
       <div className="container-page flex h-18 items-center justify-between gap-4">
         <a href="#top" className="flex shrink-0 items-center gap-3" aria-label={site.name}>
-          <img src="/logo.png" alt="" width={44} height={44} className="size-11 shrink-0 object-contain" />
+          <img src="/logo.png" alt="" width={44} height={44} className="size-10 shrink-0 object-contain sm:size-11" />
           <span className="flex flex-col leading-tight">
-            <span className="hidden whitespace-nowrap text-[0.7rem] font-semibold uppercase tracking-wider text-muted-foreground sm:block lg:hidden xl:block">
+            <span className="whitespace-nowrap text-[0.6rem] font-semibold uppercase tracking-wider text-muted-foreground sm:text-[0.7rem]">
               {t.brand.line1}
             </span>
-            <span className="font-heading text-base font-extrabold tracking-tight text-primary whitespace-nowrap sm:text-lg">
+            <span className="font-heading text-[0.95rem] font-extrabold tracking-tight text-primary whitespace-nowrap sm:text-lg">
               {t.brand.line2}
             </span>
           </span>

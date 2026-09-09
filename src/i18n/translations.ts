@@ -80,7 +80,6 @@ export interface Translation {
     title: string
     subtitle: string
     steps: StepItem[]
-    imageAlt: string
   }
   home: {
     eyebrow: string
@@ -149,16 +148,16 @@ export const translations: Record<Lang, Translation> = {
       language: 'Langue',
     },
     hero: {
-      eyebrow: 'Centre de kinésithérapie · Sidi Othmane, Casablanca',
+      eyebrow: 'Centre de kinésithérapie · El Kandari, Casablanca',
       title: 'Retrouvez le mouvement,',
       highlight: 'sans la douleur.',
       subtitle:
-        'Nous vous accompagnons avec une kinésithérapie moderne, humaine et efficace : au centre, à Sidi Othmane, ou directement chez vous à Casablanca. Un bilan précis, un plan clair, et des résultats que vous ressentez.',
+        'Nous vous accompagnons avec une kinésithérapie moderne, humaine et efficace : au centre, à Casablanca, ou directement chez vous. Un bilan précis, un plan clair, et des résultats que vous ressentez.',
       ctaWhatsapp: 'Réserver sur WhatsApp',
       ctaCall: 'Appeler le centre',
       badgeHome: 'Séances à domicile',
       badgeReply: 'Réponse rapide sur WhatsApp',
-      imageAlt: 'Salle de soins lumineuse du centre de kinésithérapie à Casablanca',
+      imageAlt: 'Illustration anatomique de la colonne vertébrale et de l\u2019articulation du genou',
     },
     trust: [
       {
@@ -221,7 +220,7 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'Le centre',
       title: 'Votre santé est notre priorité',
       paragraphs: [
-        'Au Centre de Kinésithérapie El Kandari, à Sidi Othmane, nous partons d\u2019une conviction simple : on se rétablit mieux quand on comprend ce qui se passe dans son corps et quand on avance avec une équipe qui y croit autant que soi.',
+        'Au Centre de Kinésithérapie El Kandari, à Casablanca, nous partons d\u2019une conviction simple : on se rétablit mieux quand on comprend ce qui se passe dans son corps et quand on avance avec une équipe qui y croit autant que soi.',
         'Notre pratique associe thérapie manuelle, exercices actifs et éducation du patient. Pas de séances mécaniques : chaque rendez-vous a un objectif, chaque progrès est mesuré, et le plan s\u2019adapte à votre évolution.',
         'Dynamiques, directs et bienveillants, nous accompagnons aussi bien le sportif pressé de reprendre que la personne qui souhaite simplement retrouver un quotidien sans douleur — au centre ou à domicile.',
       ],
@@ -261,8 +260,7 @@ export const translations: Record<Lang, Translation> = {
             'Vous recevez des exercices simples à réaliser chez vous, avec un suivi WhatsApp pour rester sur la bonne voie et prévenir les rechutes.',
         },
       ],
-      imageAlt: 'Séance de thérapie manuelle de l\u2019épaule au centre',
-    },
+      },
     home: {
       eyebrow: 'Séances à domicile',
       title: 'La même qualité de soins, directement chez vous à Casablanca',
@@ -366,16 +364,16 @@ export const translations: Record<Lang, Translation> = {
       language: 'Language',
     },
     hero: {
-      eyebrow: 'Physiotherapy clinic · Sidi Othmane, Casablanca',
+      eyebrow: 'Physiotherapy clinic · El Kandari, Casablanca',
       title: 'Move freely again,',
       highlight: 'without the pain.',
       subtitle:
-        'We offer modern, human and effective physiotherapy — at our clinic in Sidi Othmane or in the comfort of your home in Casablanca. A precise assessment, a clear plan, and results you can feel.',
+        'We offer modern, human and effective physiotherapy — at our clinic in Casablanca or in the comfort of your home. A precise assessment, a clear plan, and results you can feel.',
       ctaWhatsapp: 'Book on WhatsApp',
       ctaCall: 'Call the clinic',
       badgeHome: 'Home visits available',
       badgeReply: 'Fast replies on WhatsApp',
-      imageAlt: 'Bright treatment room at the physiotherapy clinic in Casablanca',
+      imageAlt: 'Anatomical illustration of the spine and the knee joint',
     },
     trust: [
       {
@@ -437,7 +435,7 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'The clinic',
       title: 'Your health is our priority',
       paragraphs: [
-        'At Centre de Kinésithérapie El Kandari in Sidi Othmane, we start from a simple belief: people recover better when they understand what is happening in their body and move forward with a team that believes in it as much as they do.',
+        'At Centre de Kinésithérapie El Kandari in Casablanca, we start from a simple belief: people recover better when they understand what is happening in their body and move forward with a team that believes in it as much as they do.',
         'Our practice combines manual therapy, active exercise and patient education. No routine sessions: every appointment has a goal, every improvement is measured, and the plan adapts as you progress.',
         'Dynamic, straightforward and caring, we support the athlete eager to get back on the field as much as the person who simply wants a pain-free daily life — at the clinic or at home.',
       ],
@@ -477,8 +475,7 @@ export const translations: Record<Lang, Translation> = {
             'You receive simple exercises to do at home, with WhatsApp follow-up to stay on track and prevent relapses.',
         },
       ],
-      imageAlt: 'Manual therapy session on the shoulder at the clinic',
-    },
+      },
     home: {
       eyebrow: 'Home visits',
       title: 'The same quality of care, right at your home in Casablanca',
@@ -582,16 +579,16 @@ export const translations: Record<Lang, Translation> = {
       language: 'اللغة',
     },
     hero: {
-      eyebrow: 'مركز الترويض الطبي · سيدي عثمان، الدار البيضاء',
+      eyebrow: 'مركز الترويض الطبي · الكندري، الدار البيضاء',
       title: 'استعد حركتك،',
       highlight: 'بدون ألم.',
       subtitle:
-        'نرافقكم بعلاج طبيعي حديث وإنساني وفعّال: في المركز بسيدي عثمان أو مباشرة في منزلكم بالدار البيضاء. تشخيص دقيق، خطة واضحة، ونتائج تشعرون بها.',
+        'نرافقكم بعلاج طبيعي حديث وإنساني وفعّال: في المركز بالدار البيضاء أو مباشرة في منزلكم. تشخيص دقيق، خطة واضحة، ونتائج تشعرون بها.',
       ctaWhatsapp: 'احجز عبر واتساب',
       ctaCall: 'اتصل بالمركز',
       badgeHome: 'حصص في المنزل',
       badgeReply: 'رد سريع على واتساب',
-      imageAlt: 'قاعة علاج مضيئة في مركز الترويض الطبي بالدار البيضاء',
+      imageAlt: 'رسم تشريحي للعمود الفقري ومفصل الركبة',
     },
     trust: [
       {
@@ -653,7 +650,7 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'المركز',
       title: 'صحتكم أولويتنا',
       paragraphs: [
-        'في مركز الترويض الطبي الكندري بسيدي عثمان، ننطلق من قناعة بسيطة: نتعافى بشكل أفضل عندما نفهم ما يحدث في أجسامنا وعندما نتقدم مع فريق يؤمن بذلك مثلنا.',
+        'في مركز الترويض الطبي الكندري بالدار البيضاء، ننطلق من قناعة بسيطة: نتعافى بشكل أفضل عندما نفهم ما يحدث في أجسامنا وعندما نتقدم مع فريق يؤمن بذلك مثلنا.',
         'تجمع ممارستنا بين العلاج اليدوي والتمارين النشطة وتوعية المريض. لا جلسات روتينية: لكل موعد هدف، وكل تقدم يُقاس، والخطة تتكيف مع تطورك.',
         'بحيوية وصراحة وتعاطف، نرافق الرياضي المتعجل للعودة كما نرافق من يرغب ببساطة في حياة يومية بلا ألم — في المركز أو في المنزل.',
       ],
@@ -693,8 +690,7 @@ export const translations: Record<Lang, Translation> = {
             'تتلقى تمارين بسيطة لتقوم بها في المنزل، مع متابعة عبر واتساب للبقاء على المسار الصحيح وتجنب الانتكاس.',
         },
       ],
-      imageAlt: 'جلسة علاج يدوي للكتف في المركز',
-    },
+      },
     home: {
       eyebrow: 'حصص في المنزل',
       title: 'نفس جودة الرعاية، مباشرة في منزلك بالدار البيضاء',
@@ -796,16 +792,16 @@ export const translations: Record<Lang, Translation> = {
       language: 'ⵜⵓⵜⵍⴰⵢⵜ',
     },
     hero: {
-      eyebrow: 'ⴰⵎⵎⴰⵙ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ · ⵙⵉⴷⵉ ⵄⵜⵎⴰⵏ, ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
+      eyebrow: 'ⴰⵎⵎⴰⵙ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ · ⵍⴽⴰⵏⴷⴰⵔⵉ, ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
       title: 'ⵔⴰⵔ ⴰⵎⵓⵙⵙⵓ ⵏⵏⴽ,',
       highlight: 'ⴱⵍⴰ ⴰⵇⵔⴰⵃ.',
       subtitle:
-        'ⵏⵜⵜⵉⵍⵉ ⵜⴰⵎⴰ ⵏⵏⴽ ⵙ ⵢⴰⵏ ⵓⵙⵓⵊⵊⵉ ⴰⵜⵔⴰⵔ, ⴰⵏⴰⴼⴳⴰⵏ ⴷ ⵉⵎⵓⵔⵙⵏ: ⴳ ⵡⴰⵎⵎⴰⵙ ⴳ ⵙⵉⴷⵉ ⵄⵜⵎⴰⵏ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ. ⴰⵙⵙⵜⴳ ⵉⵖⵓⴷⴰⵏ, ⴰⵖⴰⵡⴰⵙ ⵉⴼⴰⵡⵏ, ⴷ ⵉⴳⵎⴰⴹ ⵜⵜⵃⵓⵙⵙⵓⵜ.',
+        'ⵏⵜⵜⵉⵍⵉ ⵜⴰⵎⴰ ⵏⵏⴽ ⵙ ⵢⴰⵏ ⵓⵙⵓⵊⵊⵉ ⴰⵜⵔⴰⵔ, ⴰⵏⴰⴼⴳⴰⵏ ⴷ ⵉⵎⵓⵔⵙⵏ: ⴳ ⵡⴰⵎⵎⴰⵙ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ. ⴰⵙⵙⵜⴳ ⵉⵖⵓⴷⴰⵏ, ⴰⵖⴰⵡⴰⵙ ⵉⴼⴰⵡⵏ, ⴷ ⵉⴳⵎⴰⴹ ⵜⵜⵃⵓⵙⵙⵓⵜ.',
       ctaWhatsapp: 'ⴰⵡⵉ ⴰⵎⵙⴰⴳⴰⵔ ⴳ ⵡⴰⵜⵙⴰⴱ',
       ctaCall: 'ⵖⵔ ⵉ ⵡⴰⵎⵎⴰⵙ',
       badgeHome: 'ⵜⵉⵖⵉⵎⵉⵜⵉⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
       badgeReply: 'ⵜⵉⵔⵔⴰⵔⵜ ⵜⴰⵣⵔⴱⴰⵏⵜ ⴳ ⵡⴰⵜⵙⴰⴱ',
-      imageAlt: 'ⵜⴰⵃⴰⵏⵓⵜ ⵏ ⵓⵙⵓⵊⵊⵉ ⵉⴼⴰⵡⵏ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
+      imageAlt: 'ⵜⴰⵡⵍⴰⴼⵜ ⵏ ⵓⵣⴰⴳⵓⵔ ⴷ ⵜⴼⴷⵏⵜ',
     },
     trust: [
       {
@@ -867,7 +863,7 @@ export const translations: Record<Lang, Translation> = {
       eyebrow: 'ⴰⵎⵎⴰⵙ',
       title: 'ⵜⴰⴷⵓⵙⵉ ⵏⵏⴽ ⵜⴳⴰ ⴰⵎⵣⵡⴰⵔⵓ ⵏⵏⵖ',
       paragraphs: [
-        'ⴳ ⵡⴰⵎⵎⴰⵙ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⵍⴽⴰⵏⴷⴰⵔⵉ ⴳ ⵙⵉⴷⵉ ⵄⵜⵎⴰⵏ, ⵏⴱⴷⴰ ⵙⴳ ⵢⴰⵜ ⵜⵖⴰⵔⴰⵙⵜ ⵜⴰⴼⵙⵓⵙⵜ: ⵏⵊⵊⵉ ⵓⴳⴳⴰⵔ ⵉⵖ ⵏⵙⵙⵏ ⵎⴰⴷ ⵉⵜⵜⵎⵙⴰⵔⵏ ⴳ ⵜⴼⴽⴽⴰ ⵏⵏⵖ ⴷ ⵉⵖ ⵏⴷⴷⴰ ⴷ ⵢⴰⵜ ⵜⵔⴰⴱⴱⵓⵜ ⵢⵓⵎⵏⵏ ⵙⵔⵙ ⵣⵓⵏⴷ ⵏⴽⴽⵏⵉ.',
+        'ⴳ ⵡⴰⵎⵎⴰⵙ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⵍⴽⴰⵏⴷⴰⵔⵉ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ, ⵏⴱⴷⴰ ⵙⴳ ⵢⴰⵜ ⵜⵖⴰⵔⴰⵙⵜ ⵜⴰⴼⵙⵓⵙⵜ: ⵏⵊⵊⵉ ⵓⴳⴳⴰⵔ ⵉⵖ ⵏⵙⵙⵏ ⵎⴰⴷ ⵉⵜⵜⵎⵙⴰⵔⵏ ⴳ ⵜⴼⴽⴽⴰ ⵏⵏⵖ ⴷ ⵉⵖ ⵏⴷⴷⴰ ⴷ ⵢⴰⵜ ⵜⵔⴰⴱⴱⵓⵜ ⵢⵓⵎⵏⵏ ⵙⵔⵙ ⵣⵓⵏⴷ ⵏⴽⴽⵏⵉ.',
         'ⵜⴰⵡⵓⵔⵉ ⵏⵏⵖ ⵜⵙⵎⵓⵏ ⴰⵙⵓⵊⵊⵉ ⵙ ⵓⴼⵓⵙ, ⵉⵍⵓⵖⵎⴰ ⴷ ⵓⵙⵙⵍⵎⴷ ⵏ ⵓⵎⵓⴹⵉⵏ. ⵓⵔ ⵍⵍⵉⵏⵜ ⵜⵖⵉⵎⵉⵜⵉⵏ ⵣⵓⵏⴷ ⵜⵉⵢⴰⴹ: ⴽⵓ ⴰⵎⵙⴰⴳⴰⵔ ⵖⵓⵔⵙ ⴰⵡⵜⵜⴰⵙ, ⴽⵓ ⴰⵙⵙⴰⵔⵓ ⵉⵜⵜⵓⵙⵖⴰⵍ, ⴷ ⵓⵖⴰⵡⴰⵙ ⵉⵜⵜⵎⵙⴰⵙⴰ ⴷ ⵓⵙⵙⴰⵔⵓ ⵏⵏⴽ.',
         'ⵙ ⵜⵣⵎⵔⵜ, ⵜⵉⴷⵜ ⴷ ⵜⵃⵏⵏⴰ, ⵏⵜⵜⵉⵍⵉ ⵜⴰⵎⴰ ⵏ ⵓⵎⴰⴷⴷⴰⵍ ⵉⵔⴰⵏ ⴰⴷ ⵢⴰⵖⵓⵍ ⵙ ⵣⵔⴱ, ⴷ ⵡⴰⵏⵏⴰ ⵉⵔⴰⵏ ⵖⴰⵙ ⵜⵓⴷⵔⵜ ⴱⵍⴰ ⴰⵇⵔⴰⵃ — ⴳ ⵡⴰⵎⵎⴰⵙ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
       ],
@@ -907,8 +903,7 @@ export const translations: Record<Lang, Translation> = {
             'ⵜⵜⴰⵡⵉⵜ ⵉⵍⵓⵖⵎⴰ ⵉⴼⵙⵓⵙⵏ ⴰⴷ ⵜⵏ ⵜⵙⴽⵔⵜ ⴳ ⵜⴰⴷⴷⴰⵔⵜ, ⵙ ⵓⴹⴼⴰⵕ ⴳ ⵡⴰⵜⵙⴰⴱ ⵃⵎⴰ ⴰⴷ ⵜⵇⵇⵉⵎⵜ ⴳ ⵓⴱⵔⵉⴷ ⵉⵖⵓⴷⴰⵏ.',
         },
       ],
-      imageAlt: 'ⵜⵉⵖⵉⵎⵉⵜ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⴼⵓⵙ ⵏ ⵜⵖⵔⵓⴹⵜ ⴳ ⵡⴰⵎⵎⴰⵙ',
-    },
+      },
     home: {
       eyebrow: 'ⵜⵉⵖⵉⵎⵉⵜⵉⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
       title: 'ⵜⵉⵖⵓⴷⵉ ⵏ ⵓⵙⵓⵊⵊⵉ ⵏⵏⵉⵜ, ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
