@@ -13,10 +13,8 @@ const base =
   'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 whitespace-nowrap active:scale-[0.98]'
 
 const variants: Record<Variant, string> = {
-  primary:
-    'bg-primary text-primary-foreground shadow-[0_10px_30px_-12px_rgba(30,111,217,0.65)] hover:bg-primary-hover hover:shadow-[0_14px_34px_-12px_rgba(30,111,217,0.7)]',
-  whatsapp:
-    'bg-whatsapp text-white shadow-[0_10px_30px_-12px_rgba(37,211,102,0.7)] hover:brightness-95 hover:shadow-[0_14px_34px_-12px_rgba(37,211,102,0.75)]',
+  primary: 'bg-primary text-primary-foreground shadow-primary hover:bg-primary-hover hover:shadow-primary-hover',
+  whatsapp: 'bg-whatsapp text-primary-foreground shadow-whatsapp hover:brightness-95 hover:shadow-whatsapp-hover',
   outline: 'border border-border bg-background text-foreground hover:border-primary hover:text-primary',
   ghost: 'text-foreground hover:bg-muted',
 }

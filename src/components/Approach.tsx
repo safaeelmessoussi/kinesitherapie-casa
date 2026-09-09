@@ -11,7 +11,7 @@ export function Approach() {
     <section id="deroulement" className="scroll-mt-20 py-20 sm:py-24">
       <div className="container-page grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div ref={textRef} className="reveal flex flex-col gap-10">
-          <SectionHeader eyebrow={t.approach.eyebrow} title={t.approach.title} subtitle={t.approach.subtitle} align="left" />
+          <SectionHeader eyebrow={t.approach.eyebrow} title={t.approach.title} subtitle={t.approach.subtitle} align="start" />
 
           <ol className="flex flex-col">
             {t.approach.steps.map((step, index) => {
@@ -34,7 +34,7 @@ export function Approach() {
           </ol>
         </div>
 
-        <div ref={imageRef} className="reveal overflow-hidden rounded-2xl shadow-[0_30px_70px_-30px_rgba(15,37,64,0.45)]">
+        <div ref={imageRef} className="reveal overflow-hidden rounded-2xl shadow-card">
           <img
             src="/images/seance-manuelle.webp"
             alt={t.approach.imageAlt}

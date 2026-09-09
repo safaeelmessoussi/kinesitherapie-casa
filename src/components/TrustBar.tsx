@@ -15,7 +15,7 @@ export function TrustBar() {
           const Icon = icons[index]
           return (
             <div key={item.title} className="flex gap-4">
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-background text-primary shadow-[0_8px_20px_-14px_rgba(15,37,64,0.5)]">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-background text-primary shadow-icon">
                 <Icon className="size-5" aria-hidden="true" />
               </span>
               <div className="flex flex-col gap-1">

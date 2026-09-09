@@ -7,20 +7,15 @@ import { ButtonLink } from './ui/Button'
 import { WhatsAppIcon } from './ui/WhatsAppIcon'
 
 export function HomeVisits() {
-  const { t, lang } = useLanguage()
+  const { t } = useLanguage()
   const ref = useReveal<HTMLDivElement>()
-
-  const homeMessage =
-    lang === 'fr'
-      ? 'Bonjour, je souhaite réserver une séance de kinésithérapie à domicile à Casablanca.'
-      : 'Hello, I would like to book a home physiotherapy session in Casablanca.'
 
   return (
     <section id="domicile" className="scroll-mt-20 bg-accent-soft py-20 sm:py-24">
       <div ref={ref} className="container-page reveal grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="order-2 overflow-hidden rounded-2xl shadow-[0_30px_70px_-30px_rgba(12,59,42,0.45)] lg:order-1">
+        <div className="order-2 overflow-hidden rounded-2xl shadow-card lg:order-1">
           <img
-            src="/images/reeducation-sport.webp"
+            src="/images/domicile.webp"
             alt={t.home.imageAlt}
             width={1600}
             height={1200}
@@ -30,7 +25,7 @@ export function HomeVisits() {
         </div>
 
         <div className="order-1 flex flex-col gap-8 lg:order-2">
-          <SectionHeader eyebrow={t.home.eyebrow} title={t.home.title} subtitle={t.home.subtitle} align="left" tone="green" />
+          <SectionHeader eyebrow={t.home.eyebrow} title={t.home.title} subtitle={t.home.subtitle} align="start" tone="accent" />
 
           <ul className="flex flex-col gap-3">
             {t.home.points.map((point) => (
@@ -42,7 +37,7 @@ export function HomeVisits() {
           </ul>
 
           <ButtonLink
-            href={whatsappHref(homeMessage)}
+            href={whatsappHref(t.home.whatsappMessage)}
             variant="whatsapp"
             size="lg"
             target="_blank"

@@ -21,7 +21,7 @@ export function Contact() {
         <div className="relative overflow-hidden rounded-2xl bg-primary px-6 py-12 text-primary-foreground sm:px-12 sm:py-16">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.18)_0%,_transparent_70%)]"
+            className="pointer-events-none absolute -end-24 -top-24 size-72 rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.14)_0%,_transparent_70%)]"
           />
           <div className="relative grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
             <div className="flex flex-col gap-6">
@@ -65,7 +65,7 @@ export function Contact() {
                     {t.contact.phoneLabel} · {t.contact.whatsappLabel}
                   </dt>
                   <dd>
-                    <a href={telHref} className="text-lg font-bold underline-offset-4 hover:underline">
+                    <a href={telHref} dir="ltr" className="inline-block text-lg font-bold underline-offset-4 hover:underline">
                       {site.phoneDisplay}
                     </a>
                   </dd>

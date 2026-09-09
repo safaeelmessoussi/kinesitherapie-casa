@@ -25,7 +25,7 @@ export function Services() {
             return (
               <article
                 key={service.title}
-                className="group flex flex-col gap-4 rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_24px_50px_-30px_rgba(30,111,217,0.45)]"
+                className="group flex flex-col gap-4 rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-card-hover"
               >
                 <span className="flex size-12 items-center justify-center rounded-xl bg-primary-soft text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                   <Icon className="size-6" aria-hidden="true" />

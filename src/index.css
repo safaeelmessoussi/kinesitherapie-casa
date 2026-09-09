@@ -1,28 +1,40 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-heading: 'Manrope', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter', 'Noto Sans Arabic', 'Noto Sans Tifinagh', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Manrope', 'Noto Sans Arabic', 'Noto Sans Tifinagh', 'Inter', ui-sans-serif, system-ui, sans-serif;
 
-  --color-background: #ffffff;
-  --color-foreground: #0f2540;
-  --color-muted: #f3f7fb;
-  --color-muted-foreground: #5b6b80;
-  --color-border: #dde6f0;
+  --color-background: #fbf9f6;
+  --color-foreground: #262d33;
+  --color-muted: #f3efe9;
+  --color-muted-foreground: #66605a;
+  --color-border: #e5ded4;
 
-  --color-primary: #1e6fd9;
-  --color-primary-hover: #185cb5;
+  --color-primary: #2f5f63;
+  --color-primary-hover: #264f53;
   --color-primary-foreground: #ffffff;
-  --color-primary-soft: #e6f0fc;
+  --color-primary-soft: #e6eeee;
 
-  --color-accent: #5fc19a;
-  --color-accent-foreground: #0c3b2a;
-  --color-accent-soft: #e5f6ee;
+  --color-accent: #b3925f;
+  --color-accent-foreground: #4a3b20;
+  --color-accent-soft: #f3ebdd;
 
-  --color-whatsapp: #25d366;
+  --color-whatsapp: #1f9d5a;
 
   --radius-xl: 1.25rem;
   --radius-2xl: 1.75rem;
+
+  --shadow-card: 0 30px 70px -30px rgb(38 45 51 / 0.32);
+  --shadow-card-hover: 0 24px 50px -30px rgb(47 95 99 / 0.4);
+  --shadow-float: 0 18px 40px -20px rgb(38 45 51 / 0.28);
+  --shadow-icon: 0 8px 20px -14px rgb(38 45 51 / 0.45);
+  --shadow-header: 0 8px 30px -20px rgb(38 45 51 / 0.3);
+  --shadow-open: 0 18px 40px -28px rgb(47 95 99 / 0.45);
+  --shadow-primary: 0 10px 30px -12px rgb(47 95 99 / 0.5);
+  --shadow-primary-hover: 0 14px 34px -12px rgb(47 95 99 / 0.55);
+  --shadow-whatsapp: 0 10px 30px -12px rgb(31 157 90 / 0.5);
+  --shadow-whatsapp-hover: 0 14px 34px -12px rgb(31 157 90 / 0.55);
+  --shadow-whatsapp-float: 0 16px 40px -12px rgb(31 157 90 / 0.6);
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 
@@ -58,6 +70,23 @@
   h4 {
     @apply font-heading tracking-tight;
     line-height: 1.12;
+  }
+
+  /* Arabic script is harmed by negative letter-spacing; reset it in RTL. */
+  [dir='rtl'] h1,
+  [dir='rtl'] h2,
+  [dir='rtl'] h3,
+  [dir='rtl'] h4,
+  [dir='rtl'] .tracking-tight,
+  [dir='rtl'] .tracking-wide {
+    letter-spacing: 0;
+  }
+
+  [dir='rtl'] h1,
+  [dir='rtl'] h2,
+  [dir='rtl'] h3,
+  [dir='rtl'] h4 {
+    line-height: 1.3;
   }
 
   :focus-visible {

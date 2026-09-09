@@ -12,7 +12,7 @@ export function FloatingWhatsApp() {
       rel="noopener noreferrer"
       aria-label={t.floating}
       title={t.floating}
-      className="fixed bottom-5 right-5 z-30 flex size-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-[0_16px_40px_-12px_rgba(37,211,102,0.8)] transition-transform duration-200 hover:scale-105 active:scale-95 sm:bottom-6 sm:right-6"
+      className="fixed bottom-5 end-5 z-30 flex size-14 items-center justify-center rounded-full bg-whatsapp text-primary-foreground shadow-whatsapp-float transition-transform duration-200 hover:scale-105 active:scale-95 sm:bottom-6 sm:end-6"
     >
       <WhatsAppIcon className="size-7" />
     </a>

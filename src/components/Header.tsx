@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Menu, X, Phone, Languages } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { site, telHref, whatsappHref } from '@/lib/site'
 import { ButtonLink } from './ui/Button'
 import { WhatsAppIcon } from './ui/WhatsAppIcon'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 export function Header() {
-  const { t, lang, toggleLang } = useLanguage()
+  const { t } = useLanguage()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -37,12 +38,10 @@ export function Header() {
     { href: '#contact', label: t.nav.contact },
   ]
 
-  const otherLang = lang === 'fr' ? 'EN' : 'FR'
-
   return (
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-300 ${
-        scrolled ? 'border-b border-border/80 bg-background/85 shadow-[0_8px_30px_-20px_rgba(15,37,64,0.35)] backdrop-blur-md' : 'bg-background'
+        scrolled ? 'border-b border-border/80 bg-background/85 shadow-header backdrop-blur-md' : 'bg-background'
       }`}
     >
       <div className="container-page flex h-18 items-center justify-between gap-6">
@@ -50,7 +49,7 @@ export function Header() {
           <span className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
             <svg viewBox="0 0 64 64" className="size-6" aria-hidden="true">
               <path d="M22 18v28M42 18v28M22 32h20" stroke="currentColor" strokeWidth="7" strokeLinecap="round" fill="none" />
-              <circle cx="48" cy="18" r="6" fill="#5fc19a" />
+              <circle cx="48" cy="18" r="6" className="fill-accent" />
             </svg>
           </span>
           <span className="flex flex-col leading-tight">
@@ -72,16 +71,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <button
-            type="button"
-            onClick={toggleLang}
-            aria-label={t.nav.switchTo}
-            title={t.nav.switchTo}
-            className="inline-flex h-10 items-center gap-1.5 rounded-full border border-border px-3.5 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
-          >
-            <Languages className="size-4" aria-hidden="true" />
-            {otherLang}
-          </button>
+          <LanguageSwitcher />
           <ButtonLink href={whatsappHref(t.whatsappMessage)} variant="whatsapp" target="_blank" rel="noopener noreferrer">
             <WhatsAppIcon className="size-4" />
             {t.nav.cta}
@@ -89,15 +79,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <button
-            type="button"
-            onClick={toggleLang}
-            aria-label={t.nav.switchTo}
-            className="inline-flex h-10 items-center gap-1.5 rounded-full border border-border px-3 text-sm font-semibold"
-          >
-            <Languages className="size-4" aria-hidden="true" />
-            {otherLang}
-          </button>
+          <LanguageSwitcher />
           <a
             href={telHref}
             aria-label={t.hero.ctaCall}
@@ -149,7 +131,7 @@ export function Header() {
             </ButtonLink>
             <ButtonLink href={telHref} variant="outline" size="lg" onClick={() => setOpen(false)}>
               <Phone className="size-5" aria-hidden="true" />
-              {site.phoneDisplay}
+              <span dir="ltr">{site.phoneDisplay}</span>
             </ButtonLink>
           </div>
         </div>

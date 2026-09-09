@@ -1,4 +1,18 @@
-export type Lang = 'fr' | 'en'
+export type Lang = 'fr' | 'en' | 'ar' | 'zgh'
+
+export interface LanguageOption {
+  code: Lang
+  label: string
+  short: string
+  dir: 'ltr' | 'rtl'
+}
+
+export const languages: LanguageOption[] = [
+  { code: 'fr', label: 'Français', short: 'FR', dir: 'ltr' },
+  { code: 'en', label: 'English', short: 'EN', dir: 'ltr' },
+  { code: 'ar', label: 'العربية', short: 'ع', dir: 'rtl' },
+  { code: 'zgh', label: 'ⵜⴰⵎⴰⵣⵉⵖⵜ', short: 'ⵣ', dir: 'ltr' },
+]
 
 export interface ServiceItem {
   title: string
@@ -30,7 +44,7 @@ export interface Translation {
     cta: string
     menu: string
     close: string
-    switchTo: string
+    language: string
   }
   hero: {
     eyebrow: string
@@ -73,6 +87,7 @@ export interface Translation {
     points: string[]
     cta: string
     imageAlt: string
+    whatsappMessage: string
   }
   faq: {
     eyebrow: string
@@ -107,7 +122,7 @@ export interface Translation {
 export const translations: Record<Lang, Translation> = {
   fr: {
     meta: {
-      title: 'Kinésithérapie Casa — Cabinet de kinésithérapie à Casablanca | Lechheb Walid',
+      title: 'Kinésithérapie Casa — Cabinet de kinésithérapie à Casablanca | Walid',
       description:
         'Cabinet de kinésithérapie à Casablanca : rééducation, kiné du sport, douleurs du dos, kinésithérapie respiratoire et séances à domicile. Prise de rendez-vous rapide par téléphone ou WhatsApp.',
     },
@@ -121,14 +136,14 @@ export const translations: Record<Lang, Translation> = {
       cta: 'Prendre rendez-vous',
       menu: 'Ouvrir le menu',
       close: 'Fermer le menu',
-      switchTo: 'Switch to English',
+      language: 'Langue',
     },
     hero: {
       eyebrow: 'Cabinet de kinésithérapie · Casablanca',
       title: 'Retrouvez le mouvement,',
       highlight: 'sans la douleur.',
       subtitle:
-        'Lechheb Walid vous accompagne avec une kinésithérapie moderne, humaine et efficace : au cabinet ou directement chez vous, à Casablanca. Un bilan précis, un plan clair, et des résultats que vous ressentez.',
+        'Walid vous accompagne avec une kinésithérapie moderne, humaine et efficace : au cabinet ou directement chez vous, à Casablanca. Un bilan précis, un plan clair, et des résultats que vous ressentez.',
       ctaWhatsapp: 'Réserver sur WhatsApp',
       ctaCall: 'Appeler le cabinet',
       badgeHome: 'Séances à domicile',
@@ -194,7 +209,7 @@ export const translations: Record<Lang, Translation> = {
     },
     about: {
       eyebrow: 'Votre kinésithérapeute',
-      title: 'Lechheb Walid, l\u2019énergie d\u2019un jeune kiné, l\u2019écoute d\u2019un vrai partenaire',
+      title: 'Walid, l\u2019énergie d\u2019un jeune kiné, l\u2019écoute d\u2019un vrai partenaire',
       paragraphs: [
         'Kinésithérapeute à Casablanca, Walid a une conviction simple : on se rétablit mieux quand on comprend ce qui se passe dans son corps et quand on avance avec quelqu\u2019un qui y croit autant que soi.',
         'Sa pratique associe thérapie manuelle, exercices actifs et éducation du patient. Pas de séances mécaniques : chaque rendez-vous a un objectif, chaque progrès est mesuré, et le plan s\u2019adapte à votre évolution.',
@@ -214,7 +229,7 @@ export const translations: Record<Lang, Translation> = {
           description: 'Bilan initial, objectifs clairs, réévaluations régulières et exercices adaptés à domicile.',
         },
       ],
-      imageAlt: 'Portrait de Lechheb Walid, kinésithérapeute à Casablanca',
+      imageAlt: 'Portrait de Walid, kinésithérapeute à Casablanca',
       quote: '« Mon rôle n\u2019est pas seulement de soulager : c\u2019est de vous rendre autonome et confiant dans votre corps. »',
     },
     approach: {
@@ -252,7 +267,8 @@ export const translations: Record<Lang, Translation> = {
         'Idéal pour les seniors, la rééducation post-opératoire et la kiné respiratoire',
       ],
       cta: 'Demander une séance à domicile',
-      imageAlt: 'Exercice de rééducation guidé avec élastique et coussin d\u2019équilibre',
+      imageAlt: 'Table de kinésithérapie portable installée dans un salon lumineux',
+      whatsappMessage: 'Bonjour, je souhaite réserver une séance de kinésithérapie à domicile à Casablanca.',
     },
     faq: {
       eyebrow: 'Questions fréquentes',
@@ -320,7 +336,7 @@ export const translations: Record<Lang, Translation> = {
 
   en: {
     meta: {
-      title: 'Kinésithérapie Casa — Physiotherapy Clinic in Casablanca | Lechheb Walid',
+      title: 'Kinésithérapie Casa — Physiotherapy Clinic in Casablanca | Walid',
       description:
         'Physiotherapy clinic in Casablanca: rehabilitation, sports physio, back pain, respiratory physiotherapy and home visits. Book quickly by phone or WhatsApp.',
     },
@@ -334,14 +350,14 @@ export const translations: Record<Lang, Translation> = {
       cta: 'Book a session',
       menu: 'Open menu',
       close: 'Close menu',
-      switchTo: 'Passer en français',
+      language: 'Language',
     },
     hero: {
       eyebrow: 'Physiotherapy clinic · Casablanca',
       title: 'Move freely again,',
       highlight: 'without the pain.',
       subtitle:
-        'Lechheb Walid offers modern, human and effective physiotherapy — at the clinic or in the comfort of your home in Casablanca. A precise assessment, a clear plan, and results you can feel.',
+        'Walid offers modern, human and effective physiotherapy — at the clinic or in the comfort of your home in Casablanca. A precise assessment, a clear plan, and results you can feel.',
       ctaWhatsapp: 'Book on WhatsApp',
       ctaCall: 'Call the clinic',
       badgeHome: 'Home visits available',
@@ -407,7 +423,7 @@ export const translations: Record<Lang, Translation> = {
     },
     about: {
       eyebrow: 'Your physiotherapist',
-      title: 'Lechheb Walid: the energy of a young physio, the attention of a true partner',
+      title: 'Walid: the energy of a young physio, the attention of a true partner',
       paragraphs: [
         'A physiotherapist in Casablanca, Walid holds a simple belief: people recover better when they understand what is happening in their body and move forward with someone who believes in it as much as they do.',
         'His practice combines manual therapy, active exercise and patient education. No routine sessions: every appointment has a goal, every improvement is measured, and the plan adapts as you progress.',
@@ -427,7 +443,7 @@ export const translations: Record<Lang, Translation> = {
           description: 'Initial assessment, clear goals, regular re-evaluations and tailored home exercises.',
         },
       ],
-      imageAlt: 'Portrait of Lechheb Walid, physiotherapist in Casablanca',
+      imageAlt: 'Portrait of Walid, physiotherapist in Casablanca',
       quote: '\u201CMy role isn\u2019t only to relieve pain: it\u2019s to make you independent and confident in your body.\u201D',
     },
     approach: {
@@ -465,7 +481,8 @@ export const translations: Record<Lang, Translation> = {
         'Ideal for seniors, post-surgery rehabilitation and respiratory physiotherapy',
       ],
       cta: 'Request a home visit',
-      imageAlt: 'Guided rehabilitation exercise with a resistance band and balance pad',
+      imageAlt: 'Portable physiotherapy table set up in a bright living room',
+      whatsappMessage: 'Hello, I would like to book a home physiotherapy session in Casablanca.',
     },
     faq: {
       eyebrow: 'Frequently asked questions',
@@ -527,5 +544,425 @@ export const translations: Record<Lang, Translation> = {
     },
     whatsappMessage: 'Hello, I would like to book a physiotherapy session in Casablanca.',
     floating: 'Chat on WhatsApp',
+  },
+
+  ar: {
+    meta: {
+      title: 'كينيزيتيرابي كازا — عيادة العلاج الطبيعي في الدار البيضاء | وليد',
+      description:
+        'عيادة العلاج الطبيعي في الدار البيضاء: إعادة التأهيل، العلاج الطبيعي الرياضي، آلام الظهر، الترويض التنفسي وحصص في المنزل. حجز سريع عبر الهاتف أو واتساب.',
+    },
+    nav: {
+      services: 'العلاجات',
+      about: 'المعالج',
+      approach: 'مسار العلاج',
+      home: 'في المنزل',
+      faq: 'الأسئلة الشائعة',
+      contact: 'اتصل بنا',
+      cta: 'احجز موعدًا',
+      menu: 'فتح القائمة',
+      close: 'إغلاق القائمة',
+      language: 'اللغة',
+    },
+    hero: {
+      eyebrow: 'عيادة العلاج الطبيعي · الدار البيضاء',
+      title: 'استعد حركتك،',
+      highlight: 'بدون ألم.',
+      subtitle:
+        'يرافقك وليد بعلاج طبيعي حديث وإنساني وفعّال: في العيادة أو مباشرة في منزلك بالدار البيضاء. تشخيص دقيق، خطة واضحة، ونتائج تشعر بها.',
+      ctaWhatsapp: 'احجز عبر واتساب',
+      ctaCall: 'اتصل بالعيادة',
+      badgeHome: 'حصص في المنزل',
+      badgeReply: 'رد سريع على واتساب',
+      imageAlt: 'قاعة علاج مضيئة في عيادة العلاج الطبيعي بالدار البيضاء',
+    },
+    trust: [
+      {
+        title: 'رعاية شخصية',
+        description: 'كل جلسة تُبنى على تشخيصك وأهدافك ووتيرتك.',
+      },
+      {
+        title: 'في العيادة أو في المنزل',
+        description: 'أنت تختار: في العيادة أو في منزلك، بنفس المعدات ونفس الجودة.',
+      },
+      {
+        title: 'مواعيد سريعة',
+        description: 'رد في نفس اليوم ومواعيد تناسب أوقاتك.',
+      },
+      {
+        title: 'متابعة بين الجلسات',
+        description: 'تمارين تقوم بها في المنزل وقناة واتساب لأي سؤال.',
+      },
+    ],
+    services: {
+      eyebrow: 'علاجاتنا',
+      title: 'رعاية شاملة تتناسب مع حالتك',
+      subtitle:
+        'من الألم الحاد إلى العودة إلى الرياضة، ترافق العيادة الكبار والرياضيين وكبار السن بتقنيات يدوية ونشطة معتمدة.',
+      items: [
+        {
+          title: 'إعادة التأهيل بعد الجراحة والإصابات',
+          description:
+            'بعد عملية جراحية أو كسر أو التواء أو تمزق في الأربطة: استعادة الحركة والقوة والثقة خطوة بخطوة.',
+        },
+        {
+          title: 'العلاج الطبيعي الرياضي',
+          description:
+            'الوقاية من الإصابات وعلاجها، والتحضير للعودة إلى الملعب وتحسين الأداء الحركي مهما كان مستواك.',
+        },
+        {
+          title: 'آلام الظهر والرقبة والمفاصل',
+          description:
+            'آلام أسفل الظهر، الرقبة، عرق النسا، التهاب الأوتار، الكتف المؤلم: تخفيف الألم، فهم السبب وتجنب تكراره.',
+        },
+        {
+          title: 'الترويض التنفسي',
+          description:
+            'تنظيف الشعب الهوائية وإعادة تأهيل التنفس للرضّع والأطفال والكبار، في الحالات الحادة أو المزمنة.',
+        },
+        {
+          title: 'إعادة التأهيل العصبي',
+          description:
+            'مواكبة بعد السكتة الدماغية، أو في حالة مرض باركنسون أو إصابات عصبية أخرى للحفاظ على الاستقلالية اليومية.',
+        },
+        {
+          title: 'العلاج الطبيعي لكبار السن',
+          description: 'التوازن، الوقاية من السقوط، الحفاظ على الحركة والاستقلالية، في العيادة أو في المنزل.',
+        },
+      ],
+      note: 'لم تجد ما تحتاجه؟ راسلنا على واتساب وسنوجهك.',
+    },
+    about: {
+      eyebrow: 'معالجك الطبيعي',
+      title: 'وليد: حيوية معالج شاب، وإصغاء شريك حقيقي',
+      paragraphs: [
+        'معالج طبيعي في الدار البيضاء، يؤمن وليد بفكرة بسيطة: نتعافى بشكل أفضل عندما نفهم ما يحدث في أجسامنا وعندما نتقدم مع شخص يؤمن بذلك مثلنا.',
+        'تجمع ممارسته بين العلاج اليدوي والتمارين النشطة وتوعية المريض. لا جلسات روتينية: لكل موعد هدف، وكل تقدم يُقاس، والخطة تتكيف مع تطورك.',
+        'ديناميكي، صريح ومتعاطف، يرافق الرياضي المتعجل للعودة كما يرافق من يرغب ببساطة في حياة يومية بلا ألم.',
+      ],
+      values: [
+        {
+          title: 'الإصغاء والتوعية',
+          description: 'تغادر وأنت تفهم ألمك وما يمكنك فعله لتقليله.',
+        },
+        {
+          title: 'منهج نشط',
+          description: 'يد المعالج تخفف، والحركة تشفي: أنت شريك فعّال في تعافيك.',
+        },
+        {
+          title: 'دقة ومتابعة',
+          description: 'تشخيص أولي، أهداف واضحة، تقييمات منتظمة وتمارين منزلية مناسبة.',
+        },
+      ],
+      imageAlt: 'صورة وليد، معالج طبيعي في الدار البيضاء',
+      quote: '«دوري ليس فقط تخفيف الألم، بل أن أجعلك مستقلًا وواثقًا في جسدك.»',
+    },
+    approach: {
+      eyebrow: 'مسار العلاج',
+      title: 'كيف تتم رعايتك',
+      subtitle: 'مسار واضح في ثلاث مراحل، لتعرف تمامًا إلى أين تتجه.',
+      steps: [
+        {
+          title: 'تشخيص كامل',
+          description:
+            'الجلسة الأولى مخصصة للإصغاء إليك وفحص المنطقة المعنية وتقييم الحركة والقوة والألم. نحدد معًا أهدافًا واقعية.',
+        },
+        {
+          title: 'علاج موجّه',
+          description:
+            'علاج يدوي، تحريك المفاصل، تقوية، تمارين التوازن: كل تقنية تُختار حسب تشخيصك وتُعدَّل جلسة بعد جلسة.',
+        },
+        {
+          title: 'برنامج واستقلالية',
+          description:
+            'تتلقى تمارين بسيطة لتقوم بها في المنزل، مع متابعة عبر واتساب للبقاء على المسار الصحيح وتجنب الانتكاس.',
+        },
+      ],
+      imageAlt: 'جلسة علاج يدوي للكتف في العيادة',
+    },
+    home: {
+      eyebrow: 'حصص في المنزل',
+      title: 'نفس جودة الرعاية، مباشرة في منزلك بالدار البيضاء',
+      subtitle:
+        'حركة محدودة، خروج من المستشفى، جدول مزدحم أو مجرد تفضيل: ينتقل المعالج إليك بالمعدات اللازمة.',
+      points: [
+        'التنقل داخل الدار البيضاء وضواحيها',
+        'معدات مهنية تُنقل في كل جلسة',
+        'مواعيد نهارية وفي بداية المساء حسب التوفر',
+        'مثالي لكبار السن، وإعادة التأهيل بعد الجراحة، والترويض التنفسي',
+      ],
+      cta: 'اطلب حصة في المنزل',
+      imageAlt: 'طاولة علاج طبيعي محمولة في صالة منزل مضيئة',
+      whatsappMessage: 'مرحبًا، أرغب في حجز حصة علاج طبيعي في المنزل بالدار البيضاء.',
+    },
+    faq: {
+      eyebrow: 'الأسئلة الشائعة',
+      title: 'كل ما تريد معرفته قبل جلستك الأولى',
+      items: [
+        {
+          question: 'هل أحتاج إلى وصفة طبية؟',
+          answer:
+            'يُستحسن وجود وصفة طبية، خاصة للتعويض من التأمين أو التعاضدية. يمكنك مع ذلك التواصل معنا بدونها: سنوجهك وننصحك بزيارة طبيبك إذا لزم الأمر.',
+        },
+        {
+          question: 'كم تدوم الجلسة؟',
+          answer:
+            'تدوم الجلسة عادة بين 30 و45 دقيقة. الموعد الأول أطول قليلًا لأنه يتضمن تشخيصًا كاملًا وتحديد أهدافك.',
+        },
+        {
+          question: 'كيف أحجز موعدًا؟',
+          answer:
+            'أسهل طريقة هي إرسال رسالة واتساب أو الاتصال بالعيادة. حدد حاجتك وأوقاتك المتاحة، وسنقترح عليك بسرعة موعدًا في العيادة أو في المنزل.',
+        },
+        {
+          question: 'ماذا أحضر معي وكيف ألبس؟',
+          answer:
+            'أحضر وصفتك وفحوصاتك الأخيرة (أشعة، رنين مغناطيسي، تقارير) وملابس مريحة تسهّل الوصول إلى المنطقة المعالجة.',
+        },
+        {
+          question: 'هل الحصص المنزلية أغلى؟',
+          answer:
+            'قد تُطبق زيادة للتنقل حسب المنطقة. تُبلَّغ الأسعار بوضوح قبل الجلسة الأولى: تواصل معنا للحصول على تقدير دقيق.',
+        },
+        {
+          question: 'ما وسائل الدفع المقبولة؟',
+          answer: 'يتم الدفع في كل جلسة أو على شكل باقة حسب خطة علاجك. تُسلَّم لك فاتورة لأي تعويض محتمل.',
+        },
+      ],
+    },
+    contact: {
+      eyebrow: 'اتصل بنا',
+      title: 'احجز موعدك اليوم',
+      subtitle: 'رسالة واحدة تكفي للحصول على موعد. صف حاجتك ونرد عليك بسرعة.',
+      phoneLabel: 'الهاتف',
+      whatsappLabel: 'واتساب',
+      whatsappHint: 'رد سريع، من الاثنين إلى السبت',
+      hoursLabel: 'أوقات العمل',
+      hoursValue: 'من الاثنين إلى السبت، بموعد مسبق',
+      locationLabel: 'الموقع',
+      locationValue: 'الدار البيضاء — العيادة والتنقل إلى المنازل',
+      languagesLabel: 'اللغات',
+      languagesValue: 'الفرنسية · العربية · الإنجليزية',
+      ctaWhatsapp: 'راسلنا على واتساب',
+      ctaCall: 'اتصل الآن',
+    },
+    footer: {
+      tagline: 'عيادة العلاج الطبيعي في الدار البيضاء — في العيادة وفي المنزل.',
+      rights: 'جميع الحقوق محفوظة.',
+      disclaimer: 'المعلومات في هذا الموقع لا تعوض الاستشارة الطبية. في حالة الطوارئ، اتصل بخدمات الإسعاف.',
+    },
+    whatsappMessage: 'مرحبًا، أرغب في حجز موعد لجلسة علاج طبيعي في الدار البيضاء.',
+    floating: 'تحدث معنا على واتساب',
+  },
+
+  zgh: {
+    meta: {
+      title: 'ⴽⵉⵏⵉⵣⵉⵜⵉⵔⴰⴱⵉ ⴽⴰⵣⴰ — ⴰⵙⴰⵢⵔⴰⵔ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ | ⵡⴰⵍⵉⴷ',
+      description:
+        'ⴰⵙⴰⵢⵔⴰⵔ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ: ⴰⵙⵓⵊⵊⵉ ⵏ ⵓⵣⴰⴳⵓⵔ, ⴰⴷⴷⴰⵍ, ⵓⵏⴼⴰⵙ ⴷ ⵜⵖⵉⵎⵉⵜⵉⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ. ⴰⵎⵙⴰⴳⴰⵔ ⵙ ⵜⵜⵉⵍⵉⴼⵓⵏ ⵏⵖ ⵡⴰⵜⵙⴰⴱ.',
+    },
+    nav: {
+      services: 'ⴰⵙⵓⵊⵊⵉ',
+      about: 'ⴰⵎⵙⵓⵊⵊⵉ',
+      approach: 'ⵎⴰⵎⴽ ⵜⵜⵉⵍⵉ',
+      home: 'ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
+      faq: 'ⵉⵙⵇⵙⵉⵜⵏ',
+      contact: 'ⴰⵎⵢⴰⵡⴰⴹ',
+      cta: 'ⴰⵡⵉ ⴰⵎⵙⴰⴳⴰⵔ',
+      menu: 'ⵕⵥⵎ ⵓⵎⵓⵖ',
+      close: 'ⵇⵇⵏ ⵓⵎⵓⵖ',
+      language: 'ⵜⵓⵜⵍⴰⵢⵜ',
+    },
+    hero: {
+      eyebrow: 'ⴰⵙⴰⵢⵔⴰⵔ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ · ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
+      title: 'ⵔⴰⵔ ⴰⵎⵓⵙⵙⵓ ⵏⵏⴽ,',
+      highlight: 'ⴱⵍⴰ ⴰⵇⵔⴰⵃ.',
+      subtitle:
+        'ⵡⴰⵍⵉⴷ ⴰⴷ ⴽ ⵢⵉⵍⵉ ⵜⴰⵎⴰ ⵙ ⵢⴰⵏ ⵓⵙⵓⵊⵊⵉ ⴰⵜⵔⴰⵔ, ⴰⵏⴰⴼⴳⴰⵏ ⴷ ⵉⵎⵓⵔⵙⵏ: ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ. ⴰⵙⵙⵜⴳ ⵉⵖⵓⴷⴰⵏ, ⴰⵖⴰⵡⴰⵙ ⵉⴼⴰⵡⵏ, ⴷ ⵉⴳⵎⴰⴹ ⵜⵜⵃⵓⵙⵙⵓⵜ.',
+      ctaWhatsapp: 'ⴰⵡⵉ ⴰⵎⵙⴰⴳⴰⵔ ⴳ ⵡⴰⵜⵙⴰⴱ',
+      ctaCall: 'ⵖⵔ ⵉ ⵓⵙⴰⵢⵔⴰⵔ',
+      badgeHome: 'ⵜⵉⵖⵉⵎⵉⵜⵉⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
+      badgeReply: 'ⵜⵉⵔⵔⴰⵔⵜ ⵜⴰⵣⵔⴱⴰⵏⵜ ⴳ ⵡⴰⵜⵙⴰⴱ',
+      imageAlt: 'ⵜⴰⵃⴰⵏⵓⵜ ⵏ ⵓⵙⵓⵊⵊⵉ ⵉⴼⴰⵡⵏ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
+    },
+    trust: [
+      {
+        title: 'ⴰⵙⵓⵊⵊⵉ ⵉⵎⵙⴰⵙⴰⵏ ⴷ ⴽⵓ ⵢⴰⵏ',
+        description: 'ⴽⵓ ⵜⵉⵖⵉⵎⵉⵜ ⵜⴱⴷⴷ ⵅⴼ ⵓⵙⵙⵜⴳ ⵏⵏⴽ, ⵉⵡⵜⵜⴰⵙⵏ ⵏⵏⴽ ⴷ ⵓⵏⵣⴳⵓⵎ ⵏⵏⴽ.',
+      },
+      {
+        title: 'ⴰⵙⴰⵢⵔⴰⵔ ⵏⵖ ⵜⴰⴷⴷⴰⵔⵜ',
+        description: 'ⴽⵢⵢⵉ ⴰⴷ ⵉⵙⵜⵉⵏ: ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ, ⵙ ⵢⴰⵏ ⵓⵎⴰⵙⵙⵏ ⴷ ⵢⴰⵜ ⵜⵖⵓⴷⵉ.',
+      },
+      {
+        title: 'ⵉⵎⵙⴰⴳⴰⵔⵏ ⵉⵣⵔⴱⴰⵏⵏ',
+        description: 'ⵜⵉⵔⵔⴰⵔⵜ ⴳ ⵢⴰⵏ ⵡⴰⵙⵙ ⴷ ⵉⵣⵎⴰⵣ ⵉⵎⵙⴰⵙⴰⵏ ⴷ ⵡⴰⴽⵓⴷ ⵏⵏⴽ.',
+      },
+      {
+        title: 'ⴰⴹⴼⴰⵕ ⴳⵔ ⵜⵖⵉⵎⵉⵜⵉⵏ',
+        description: 'ⵉⵍⵓⵖⵎⴰ ⴰⴷ ⵜⵏ ⵜⵙⴽⵔⵜ ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⴷ ⵡⴰⵜⵙⴰⴱ ⵉ ⴽⵓ ⴰⵙⵇⵙⵉ.',
+      },
+    ],
+    services: {
+      eyebrow: 'ⴰⵙⵓⵊⵊⵉ ⵏⵏⵖ',
+      title: 'ⴰⵙⵓⵊⵊⵉ ⵉⵙⵎⴷⵏ, ⵉⵎⵙⴰⵙⴰⵏ ⴷ ⵡⴰⴷⴷⴰⴷ ⵏⵏⴽ',
+      subtitle:
+        'ⵙⴳ ⵓⵇⵔⴰⵃ ⴰⵔ ⵜⵓⵖⵓⵍⵜ ⵙ ⵡⴰⴷⴷⴰⵍ, ⵏⵜⵜⵉⵍⵉ ⵜⴰⵎⴰ ⵏ ⵉⵎⵇⵇⵔⴰⵏⵏ, ⵉⵎⴰⴷⴷⴰⵍⵏ ⴷ ⵉⵎⵖⴰⵔⵏ ⵙ ⵜⵉⴳⴳⵉⵜⵉⵏ ⵏ ⵓⴼⵓⵙ ⴷ ⵓⵎⵓⵙⵙⵓ ⵉⵜⵜⵓⵙⵙⴰⵏⵏ.',
+      items: [
+        {
+          title: 'ⴰⵙⵓⵊⵊⵉ ⴷⴼⴼⵉⵔ ⵜⵡⵓⵔⵉ ⵜⴰⵎⵙⵓⵊⵊⵉⵜ ⴷ ⵉⵎⴰⵟⵟⴰⵍⵏ',
+          description:
+            'ⴷⴼⴼⵉⵔ ⵏ ⵜⵡⵓⵔⵉ ⵜⴰⵎⵙⵓⵊⵊⵉⵜ, ⴰⵕⵥⵥⵓⵎ ⵏ ⵉⵖⵙ ⵏⵖ ⴰⴼⵜⵍ: ⵔⴰⵔ ⴰⵎⵓⵙⵙⵓ, ⵜⴰⴷⵓⵙⵉ ⴷ ⵜⴰⴼⵍⵙⵜ ⴰⵙⵓⵔⵉⴼ ⵙ ⵓⵙⵓⵔⵉⴼ.',
+        },
+        {
+          title: 'ⴰⵙⵓⵊⵊⵉ ⵏ ⵡⴰⴷⴷⴰⵍ',
+          description:
+            'ⴰⵃⵟⵟⵓ ⴷ ⵓⵙⵓⵊⵊⵉ ⵏ ⵉⵎⴰⵟⵟⴰⵍⵏ, ⴰⵙⵎⵓⵜⵜⴳ ⵏ ⵜⵓⵖⵓⵍⵜ ⵙ ⵡⴰⴷⴷⴰⵍ, ⵎⴰ ⵢⴰⴷ ⵉⴳⴰ ⴰⵙⵡⵉⵔ ⵏⵏⴽ.',
+        },
+        {
+          title: 'ⴰⵇⵔⴰⵃ ⵏ ⵓⵣⴰⴳⵓⵔ, ⵓⵎⴳⴳⵔⴹ ⴷ ⵉⵖⵙⴰⵏ',
+          description:
+            'ⴰⵇⵔⴰⵃ ⵏ ⵓⵣⴰⴳⵓⵔ, ⵏ ⵓⵎⴳⴳⵔⴹ, ⵏ ⵜⵖⵔⵓⴹⵜ: ⵙⴼⵙⵓⵙ ⴰⵇⵔⴰⵃ, ⵙⵙⵏ ⴰⵙⵔⴰⴳ ⵏⵏⵙ, ⴷ ⵓⵔ ⵜ ⵜⴰⵊⵊⵜ ⴰⴷ ⵢⴰⵖⵓⵍ.',
+        },
+        {
+          title: 'ⴰⵙⵓⵊⵊⵉ ⵏ ⵓⵏⴼⴰⵙ',
+          description: 'ⴰⵙⵉⵣⴷⴳ ⵏ ⵜⵓⵔⵉⵏ ⴷ ⵓⵙⵓⵊⵊⵉ ⵏ ⵓⵏⴼⴰⵙ ⵉ ⵉⵍⵓⴼⴰⵏⵏ, ⵉⵎⵥⵥⵢⴰⵏⵏ ⴷ ⵉⵎⵇⵇⵔⴰⵏⵏ.',
+        },
+        {
+          title: 'ⴰⵙⵓⵊⵊⵉ ⴰⵏⵓⵔⵓⵍⵓⵊⵉ',
+          description:
+            'ⴰⴹⴼⴰⵕ ⴷⴼⴼⵉⵔ ⵏ ⵜⵢⵢⵉⵜⵉ ⵏ ⵓⵍⵍⵖ, ⴰⵟⵟⴰⵏ ⵏ ⴱⴰⵔⴽⵉⵏⵙⵓⵏ ⵏⵖ ⵉⵎⵓⴽⵔⵉⵙⵏ ⵢⴰⴹⵏ, ⵃⵎⴰ ⴰⴷ ⵜⵇⵇⵉⵎ ⵜⴷⵔⴼⵉⵜ ⴳ ⵜⵓⴷⵔⵜ ⵏ ⴽⵓ ⴰⵙⵙ.',
+        },
+        {
+          title: 'ⴰⵙⵓⵊⵊⵉ ⵏ ⵉⵎⵖⴰⵔⵏ',
+          description: 'ⴰⵎⵙⴰⵙⴰ, ⴰⵃⵟⵟⵓ ⵙⴳ ⵜⵢⵢⵉⵜⴰ ⵏ ⵡⴰⴽⴰⵍ, ⴰⵎⵓⵙⵙⵓ ⴷ ⵜⴷⵔⴼⵉⵜ, ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
+        },
+      ],
+      note: 'ⵓⵔ ⵜⵓⴼⵉⵜ ⵎⴰⴷ ⵜⵔⵉⵜ? ⴰⵔⴰ ⴰⵖ ⴳ ⵡⴰⵜⵙⴰⴱ, ⵔⴰⴷ ⴰⴽ ⵏⵎⵍ ⴰⴱⵔⵉⴷ.',
+    },
+    about: {
+      eyebrow: 'ⴰⵎⵙⵓⵊⵊⵉ ⵏⵏⴽ',
+      title: 'ⵡⴰⵍⵉⴷ: ⵜⴰⵣⵎⵔⵜ ⵏ ⵢⴰⵏ ⵓⵎⵙⵓⵊⵊⵉ ⴰⵎⵥⵥⵢⴰⵏ, ⴰⵙⴼⵍⴷ ⵏ ⵢⴰⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ ⵏ ⵜⵉⴷⵜ',
+      paragraphs: [
+        'ⴰⵎⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ, ⵡⴰⵍⵉⴷ ⵢⵓⵎⵏ ⵙ ⵢⴰⵜ ⵜⵖⴰⵔⴰⵙⵜ ⵜⴰⴼⵙⵓⵙⵜ: ⵏⵊⵊⵉ ⵓⴳⴳⴰⵔ ⵉⵖ ⵏⵙⵙⵏ ⵎⴰⴷ ⵉⵜⵜⵎⵙⴰⵔⵏ ⴳ ⵜⴼⴽⴽⴰ ⵏⵏⵖ ⴷ ⵉⵖ ⵏⴷⴷⴰ ⴷ ⵢⴰⵏ ⵢⵓⵎⵏ ⵙⵔⵙ ⵣⵓⵏⴷ ⵏⴽⴽⵏⵉ.',
+        'ⵜⴰⵡⵓⵔⵉ ⵏⵏⵙ ⵜⵙⵎⵓⵏ ⴰⵙⵓⵊⵊⵉ ⵙ ⵓⴼⵓⵙ, ⵉⵍⵓⵖⵎⴰ ⴷ ⵓⵙⵙⵍⵎⴷ ⵏ ⵓⵎⵓⴹⵉⵏ. ⵓⵔ ⵍⵍⵉⵏⵜ ⵜⵖⵉⵎⵉⵜⵉⵏ ⵣⵓⵏⴷ ⵜⵉⵢⴰⴹ: ⴽⵓ ⴰⵎⵙⴰⴳⴰⵔ ⵖⵓⵔⵙ ⴰⵡⵜⵜⴰⵙ, ⴽⵓ ⴰⵙⵙⴰⵔⵓ ⵉⵜⵜⵓⵙⵖⴰⵍ, ⴷ ⵓⵖⴰⵡⴰⵙ ⵉⵜⵜⵎⵙⴰⵙⴰ ⴷ ⵓⵙⵙⴰⵔⵓ ⵏⵏⴽ.',
+        'ⵉⵎⵓⵙⵙⵓ, ⵉⵏⵏⴰ ⵜⵉⴷⵜ, ⵉⵃⵏⵏⴰ: ⴰⵔ ⵉⵜⵜⵉⵍⵉ ⵜⴰⵎⴰ ⵏ ⵓⵎⴰⴷⴷⴰⵍ ⵉⵔⴰⵏ ⴰⴷ ⵢⴰⵖⵓⵍ ⵙ ⵣⵔⴱ, ⴷ ⵡⴰⵏⵏⴰ ⵉⵔⴰⵏ ⵖⴰⵙ ⵜⵓⴷⵔⵜ ⴱⵍⴰ ⴰⵇⵔⴰⵃ.',
+      ],
+      values: [
+        {
+          title: 'ⴰⵙⴼⵍⴷ ⴷ ⵓⵙⵙⵍⵎⴷ',
+          description: 'ⵜⴷⴷⵓⵜ ⵜⵙⵙⵏⵜ ⴰⵇⵔⴰⵃ ⵏⵏⴽ ⴷ ⵎⴰⴷ ⵜⵣⵎⵔⵜ ⴰⴷ ⵜⵙⴽⵔⵜ ⵃⵎⴰ ⴰⴷ ⵜ ⵜⵙⵙⴷⵔⵓⵙⵜ.',
+        },
+        {
+          title: 'ⵜⴰⵖⴰⵔⴰⵙⵜ ⵏ ⵓⵎⵓⵙⵙⵓ',
+          description: 'ⴰⴼⵓⵙ ⵏ ⵓⵎⵙⵓⵊⵊⵉ ⵉⵙⴼⵙⵓⵙ, ⴰⵎⵓⵙⵙⵓ ⵉⵙⵙⵊⵊⵉ: ⴽⵢⵢⵉ ⴰⴷ ⵉⴳⴰⵏ ⴰⵎⵙⴽⴰⵔ ⴳ ⵓⵙⵓⵊⵊⵉ ⵏⵏⴽ.',
+        },
+        {
+          title: 'ⵜⵉⵖⵓⴷⵉ ⴷ ⵓⴹⴼⴰⵕ',
+          description: 'ⴰⵙⵙⵜⴳ ⴰⵎⵣⵡⴰⵔⵓ, ⵉⵡⵜⵜⴰⵙⵏ ⵉⴼⴰⵡⵏ, ⴰⵙⵙⵜⴳ ⴽⵓ ⵜⵉⵣⵉ ⴷ ⵉⵍⵓⵖⵎⴰ ⵉⵎⵙⴰⵙⴰⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
+        },
+      ],
+      imageAlt: 'ⵜⴰⵡⵍⴰⴼⵜ ⵏ ⵡⴰⵍⵉⴷ, ⴰⵎⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
+      quote: '« ⵜⴰⵡⵓⵔⵉ ⵏⵓ ⵓⵔ ⵜⴳⵉ ⵖⴰⵙ ⴰⵙⴼⵙⵓⵙ ⵏ ⵓⵇⵔⴰⵃ: ⵜⴳⴰ ⴰⴷ ⴽ ⵙⵙⴷⵔⴼⵉⵖ ⴷ ⴰⴷ ⵜⴰⵎⵏⵜ ⵙ ⵜⴼⴽⴽⴰ ⵏⵏⴽ. »',
+    },
+    approach: {
+      eyebrow: 'ⵎⴰⵎⴽ ⵜⵜⵉⵍⵉ',
+      title: 'ⵎⴰⵎⴽ ⵉⵜⵜⵉⵍⵉ ⵓⵙⵓⵊⵊⵉ ⵏⵏⴽ',
+      subtitle: 'ⴰⴱⵔⵉⴷ ⵉⴼⴰⵡⵏ ⵙ ⴽⵕⴰⴹ ⵉⵙⵓⵔⵉⴼⵏ, ⴰⴷ ⵜⵙⵙⵏⵜ ⵎⴰⵏⵉ ⵜⴷⴷⵓⵜ.',
+      steps: [
+        {
+          title: 'ⴰⵙⵙⵜⴳ ⵉⵙⵎⴷⵏ',
+          description:
+            'ⵜⵉⵖⵉⵎⵉⵜ ⵜⴰⵎⵣⵡⴰⵔⵓⵜ ⵜⴳⴰ ⵉ ⵓⵙⴼⵍⴷ ⵏⵏⴽ, ⴰⵙⵙⵉⴳⴳⵍ ⵏ ⵡⴰⵏⵙⴰ ⵉⵇⵔⵃⵏ ⴷ ⵓⵙⵙⵜⴳ ⵏ ⵓⵎⵓⵙⵙⵓ, ⵜⴷⵓⵙⵉ ⴷ ⵓⵇⵔⴰⵃ. ⵏⵙⵔⵙ ⵙ ⵜⴷⵔⴰⵡⵜ ⵉⵡⵜⵜⴰⵙⵏ ⵉⵣⵎⵔⵏ.',
+        },
+        {
+          title: 'ⴰⵙⵓⵊⵊⵉ ⵉⵎⵙⴰⵙⴰⵏ',
+          description:
+            'ⴰⵙⵓⵊⵊⵉ ⵙ ⵓⴼⵓⵙ, ⴰⵙⵎⵓⵙⵙⵓ, ⴰⵙⴷⵓⵙ, ⴰⵎⵙⴰⵙⴰ: ⴽⵓ ⵜⴰⵜⵉⴽⵏⵉⵜ ⵜⵜⵓⵙⵜⴰⵢ ⵅⴼ ⵓⵙⵙⵜⴳ ⵏⵏⴽ ⴷ ⵜⵜⵓⵙⵎⵙⴰⵙⴰ ⵜⵉⵖⵉⵎⵉⵜ ⴷⴼⴼⵉⵔ ⵜⵉⵖⵉⵎⵉⵜ.',
+        },
+        {
+          title: 'ⴰⵖⴰⵡⴰⵙ ⴷ ⵜⴷⵔⴼⵉⵜ',
+          description:
+            'ⵜⵜⴰⵡⵉⵜ ⵉⵍⵓⵖⵎⴰ ⵉⴼⵙⵓⵙⵏ ⴰⴷ ⵜⵏ ⵜⵙⴽⵔⵜ ⴳ ⵜⴰⴷⴷⴰⵔⵜ, ⵙ ⵓⴹⴼⴰⵕ ⴳ ⵡⴰⵜⵙⴰⴱ ⵃⵎⴰ ⴰⴷ ⵜⵇⵇⵉⵎⵜ ⴳ ⵓⴱⵔⵉⴷ ⵉⵖⵓⴷⴰⵏ.',
+        },
+      ],
+      imageAlt: 'ⵜⵉⵖⵉⵎⵉⵜ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⴼⵓⵙ ⵏ ⵜⵖⵔⵓⴹⵜ ⴳ ⵓⵙⴰⵢⵔⴰⵔ',
+    },
+    home: {
+      eyebrow: 'ⵜⵉⵖⵉⵎⵉⵜⵉⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
+      title: 'ⵜⵉⵖⵓⴷⵉ ⵏ ⵓⵙⵓⵊⵊⵉ ⵏⵏⵉⵜ, ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⵏⵏⴽ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
+      subtitle:
+        'ⴰⵎⵓⵙⵙⵓ ⵉⴷⵔⵓⵙⵏ, ⵜⵓⴼⴼⵖⴰ ⵙⴳ ⵓⵙⴳⵏⴰⴼ, ⴰⴽⵓⴷ ⵉⵄⵎⵕⵏ ⵏⵖ ⵖⴰⵙ ⵜⵉⵔⴰⵜ: ⴰⵎⵙⵓⵊⵊⵉ ⴰⴷ ⴽ ⴷ ⵢⴰⵛⴽ ⵙ ⵓⵎⴰⵙⵙⵏ ⵉⵍⴰⵇⵏ.',
+      points: [
+        'ⴰⵎⵓⴷⴷⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ ⴷ ⵎⴰ ⵜ ⵉⵏⵏⴹⵏ',
+        'ⴰⵎⴰⵙⵙⵏ ⴰⵣⵣⵓⵍⴰⵏ ⵉⵜⵜⵓⵙⵎⵓⵜⵜⵉⵏ ⴳ ⴽⵓ ⵜⵉⵖⵉⵎⵉⵜ',
+        'ⵉⵣⵎⴰⵣ ⴳ ⵡⴰⵙⵙ ⴷ ⵜⴰⵣⵡⴰⵔⴰ ⵏ ⵜⴷⴳⴳⵯⴰⵜ',
+        'ⵉⵖⵓⴷⴰ ⵉ ⵉⵎⵖⴰⵔⵏ, ⴰⵙⵓⵊⵊⵉ ⴷⴼⴼⵉⵔ ⵜⵡⵓⵔⵉ ⵜⴰⵎⵙⵓⵊⵊⵉⵜ ⴷ ⵓⵙⵓⵊⵊⵉ ⵏ ⵓⵏⴼⴰⵙ',
+      ],
+      cta: 'ⵙⵓⵜⵔ ⵜⵉⵖⵉⵎⵉⵜ ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
+      imageAlt: 'ⵜⴰⴷⴰⴱⵓⵜ ⵏ ⵓⵙⵓⵊⵊⵉ ⵉⵜⵜⵓⵙⵎⵓⵜⵜⵉⵏ ⴳ ⵢⴰⵜ ⵜⴰⴷⴷⴰⵔⵜ ⵉⴼⴰⵡⵏ',
+      whatsappMessage:
+        'ⴰⵣⵓⵍ, ⵔⵉⵖ ⴰⴷ ⴰⵡⵉⵖ ⵜⵉⵖⵉⵎⵉⵜ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴰⴷⴷⴰⵔⵜ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ. (Bonjour, je souhaite réserver une séance de kinésithérapie à domicile à Casablanca.)',
+    },
+    faq: {
+      eyebrow: 'ⵉⵙⵇⵙⵉⵜⵏ',
+      title: 'ⴽⵓⵍⵍⵓ ⵎⴰⴷ ⵜⵔⵉⵜ ⴰⴷ ⵜⵙⵙⵏⵜ ⴷⴰⵜ ⵜⵖⵉⵎⵉⵜ ⵏⵏⴽ ⵜⴰⵎⵣⵡⴰⵔⵓⵜ',
+      items: [
+        {
+          question: 'ⵉⵙ ⵜⵜⵓⵙⵔⴰⵖ ⵜⴰⵏⵏⴰⵢⵜ ⵏ ⵓⵎⵙⵓⵊⵊⵉ?',
+          answer:
+            'ⵜⴳⴰ ⵜⴰⵏⵏⴰⵢⵜ ⵏ ⵓⵎⵙⵓⵊⵊⵉ ⵜⴰⵎⵓⴼⴰⵢⵜ, ⵙ ⵓⵎⴰⵜⴰ ⵉ ⵓⵔⴰⵔ ⵏ ⵜⵎⵙⵙⵓⵔⵜ ⵏ ⵓⵃⵟⵟⵓ. ⵜⵣⵎⵔⵜ ⵎⴰⵛ ⴰⴷ ⴰⵖ ⵜⵎⵢⴰⵡⴰⴹⵜ ⴱⵍⴰ ⵜⵜ: ⵔⴰⴷ ⴰⴽ ⵏⵎⵍ ⴰⴱⵔⵉⴷ, ⴷ ⵉⵖ ⵉⵍⴰⵇ, ⵏⵉⵏⵉ ⴰⴽ ⴰⴷ ⵜⵥⵕⵜ ⴰⵎⵙⵓⵊⵊⵉ ⵏⵏⴽ.',
+        },
+        {
+          question: 'ⵎⵏⵛⴽ ⵜⵜⵇⵇⵉⵎ ⵜⵖⵉⵎⵉⵜ?',
+          answer:
+            'ⵜⵜⵇⵇⵉⵎ ⵜⵖⵉⵎⵉⵜ ⵙ ⵓⵎⴰⵜⴰ ⴳⵔ 30 ⴷ 45 ⵏ ⵜⵓⵙⴷⵉⴷⵜ. ⴰⵎⵙⴰⴳⴰⵔ ⴰⵎⵣⵡⴰⵔⵓ ⵉⵖⵣⵣⵉⴼ ⵛⵡⵉⵢ, ⴰⵛⴽⵓ ⵢⵓⵎⴰ ⴰⵙⵙⵜⴳ ⵉⵙⵎⴷⵏ ⴷ ⵓⵙⵔⵓⵙ ⵏ ⵉⵡⵜⵜⴰⵙⵏ ⵏⵏⴽ.',
+        },
+        {
+          question: 'ⵎⴰⵎⴽ ⴰⴷ ⴰⵡⵉⵖ ⴰⵎⵙⴰⴳⴰⵔ?',
+          answer:
+            'ⴰⴱⵔⵉⴷ ⵉⴼⵙⵓⵙⵏ ⵉⴳⴰ ⵜ ⴰⴷ ⵜⴰⵣⵏⵜ ⵜⴰⴱⵔⴰⵜ ⴳ ⵡⴰⵜⵙⴰⴱ ⵏⵖ ⴰⴷ ⵜⵖⵔⵜ ⵉ ⵓⵙⴰⵢⵔⴰⵔ. ⵉⵏⵉ ⴰⵖ ⵎⴰⴷ ⵜⵔⵉⵜ ⴷ ⵎⴰⵏⴰⴳⵓ ⵜⵣⵎⵔⵜ, ⵔⴰⴷ ⴰⴽ ⵏⴼⴽ ⵙ ⵣⵔⴱ ⴰⵣⵎⵣ ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⵏⵖ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
+        },
+        {
+          question: 'ⵎⴰⴷ ⴰⴷ ⴰⵡⵉⵖ ⴷ ⵎⴰⵎⴽ ⴰⴷ ⵍⵙⵖ?',
+          answer:
+            'ⴰⵡⵉ ⵜⴰⵏⵏⴰⵢⵜ ⵏ ⵓⵎⵙⵓⵊⵊⵉ, ⵉⵙⵙⵉⴳⴳⵍⵏ ⵏⵏⴽ ⵉⵎⴳⴳⵓⵔⴰ (ⵕⴰⴷⵢⵓ, IRM, ⵉⵏⵇⵇⵉⵙⵏ) ⴷ ⵉⵛⴹⴰⴹⵏ ⵉⴼⵙⵓⵙⵏ ⵉⵜⵜⴰⵊⵊⴰⵏ ⴰⴷ ⵏⵍⴽⵎ ⴰⵏⵙⴰ ⵏ ⵓⵙⵓⵊⵊⵉ.',
+        },
+        {
+          question: 'ⵉⵙ ⵜⵖⵍⴰⵏⵜ ⵜⵖⵉⵎⵉⵜⵉⵏ ⵏ ⵜⴰⴷⴷⴰⵔⵜ ⵓⴳⴳⴰⵔ?',
+          answer:
+            'ⵉⵣⵎⵔ ⴰⴷ ⵢⵉⵍⵉ ⵢⴰⵏ ⵓⵔⵏⵓ ⵏ ⵓⵎⵓⴷⴷⵓ ⵙ ⵡⴰⵏⵙⴰ. ⵜⵜⵓⵎⵍⴰⵏ ⵡⴰⵜⵉⴳⵏ ⵙ ⵜⵉⴼⴰⵡⵜ ⴷⴰⵜ ⵜⵖⵉⵎⵉⵜ ⵜⴰⵎⵣⵡⴰⵔⵓⵜ: ⵎⵢⴰⵡⴰⴹ ⴰⵖ ⵉ ⵢⴰⵏ ⵓⵙⵙⵜⴳ ⵉⵖⵓⴷⴰⵏ.',
+        },
+        {
+          question: 'ⵎⴰⵏ ⵜⵖⴰⵔⴰⵙⵉⵏ ⵏ ⵓⴼⵔⴰ ⴰⴷ ⵜⵇⴱⵍⵎ?',
+          answer: 'ⴰⴼⵔⴰ ⵉⵜⵜⵉⵍⵉ ⴳ ⴽⵓ ⵜⵉⵖⵉⵎⵉⵜ ⵏⵖ ⵙ ⵓⵎⵓⵍⵍⵉ ⵙ ⵓⵖⴰⵡⴰⵙ ⵏⵏⴽ. ⵜⵜⴰⵡⵉⵜ ⵜⴰⴼⴰⵜⵓⵔⵜ ⵉ ⵓⵔⴰⵔ ⵏⵏⴽ.',
+        },
+      ],
+    },
+    contact: {
+      eyebrow: 'ⴰⵎⵢⴰⵡⴰⴹ',
+      title: 'ⴰⵡⵉ ⴰⵎⵙⴰⴳⴰⵔ ⵏⵏⴽ ⵖⴰⵙⵙⴰ',
+      subtitle: 'ⵢⴰⵜ ⵜⴱⵔⴰⵜ ⵜⵇⴰⴷⴰ ⵃⵎⴰ ⴰⴷ ⵜⴰⵡⵉⵜ ⴰⵣⵎⵣ. ⵉⵏⵉ ⴰⵖ ⵎⴰⴷ ⵜⵔⵉⵜ, ⵔⴰⴷ ⴰⴽ ⵏⵔⴰⵔ ⵙ ⵣⵔⴱ.',
+      phoneLabel: 'ⴰⵜⵉⵍⵉⴼⵓⵏ',
+      whatsappLabel: 'ⵡⴰⵜⵙⴰⴱ',
+      whatsappHint: 'ⵜⵉⵔⵔⴰⵔⵜ ⵜⴰⵣⵔⴱⴰⵏⵜ, ⵙⴳ ⵡⴰⵢⵏⴰⵙ ⴰⵔ ⴰⵙⵉⴹⵢⴰⵙ',
+      hoursLabel: 'ⵉⵙⵔⴰⴳⵏ',
+      hoursValue: 'ⵙⴳ ⵡⴰⵢⵏⴰⵙ ⴰⵔ ⴰⵙⵉⴹⵢⴰⵙ, ⵙ ⵓⵎⵙⴰⴳⴰⵔ',
+      locationLabel: 'ⴰⵏⵙⴰ',
+      locationValue: 'ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ — ⴰⵙⴰⵢⵔⴰⵔ ⴷ ⵉⵎⵓⴷⴷⵓⵜⵏ ⵙ ⵜⵓⴷⴷⴰⵔ',
+      languagesLabel: 'ⵜⵓⵜⵍⴰⵢⵉⵏ',
+      languagesValue: 'ⵜⴰⴼⵕⴰⵏⵙⵉⵙⵜ · ⵜⴰⵄⵔⴰⴱⵜ · ⵜⴰⵏⴳⵍⵉⵣⵜ',
+      ctaWhatsapp: 'ⴰⵔⴰ ⴳ ⵡⴰⵜⵙⴰⴱ',
+      ctaCall: 'ⵖⵔ ⵖⵉⵍⴰ',
+    },
+    footer: {
+      tagline: 'ⴰⵙⴰⵢⵔⴰⵔ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ — ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⴷ ⴳ ⵜⴰⴷⴷⴰⵔⵜ.',
+      rights: 'ⴽⵓⵍⵍⵓ ⵉⵣⵔⴼⴰⵏ ⵜⵜⵓⵃⴹⴰⵏ.',
+      disclaimer:
+        'ⵉⵏⵖⵎⵉⵙⵏ ⵏ ⵡⴰⵙⵉⵜ ⴰⴷ ⵓⵔ ⵙⵎⵎⴽⵜⵉⵏ ⵜⴰⵏⵏⴰⵢⵜ ⵏ ⵓⵎⵙⵓⵊⵊⵉ. ⴳ ⵜⵎⵙⴰⵔⵜ ⵜⴰⵣⵔⴱⴰⵏⵜ, ⵖⵔ ⵉ ⵜⵏⴰⴼⵓⵜⵉⵏ ⵏ ⵜⵡⵉⵙⵉ ⵜⴰⵣⵔⴱⴰⵏⵜ.',
+    },
+    whatsappMessage:
+      'ⴰⵣⵓⵍ, ⵔⵉⵖ ⴰⴷ ⴰⵡⵉⵖ ⴰⵎⵙⴰⴳⴰⵔ ⵏ ⵓⵙⵓⵊⵊⵉ ⵙ ⵓⵎⵓⵙⵙⵓ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ. (Bonjour, je souhaite prendre rendez-vous pour une séance de kinésithérapie à Casablanca.)',
+    floating: 'ⵙⴰⵡⵍ ⴰⵖ ⴳ ⵡⴰⵜⵙⴰⴱ',
   },
 }

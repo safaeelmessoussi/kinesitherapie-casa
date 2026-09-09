@@ -17,9 +17,9 @@ export function Faq() {
             <details
               key={item.question}
               open={index === 0}
-              className="group rounded-xl border border-border bg-background open:border-primary/40 open:shadow-[0_18px_40px_-28px_rgba(30,111,217,0.5)]"
+              className="group rounded-xl border border-border bg-background open:border-primary/40 open:shadow-open"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left font-semibold marker:content-none [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-start font-semibold marker:content-none [&::-webkit-details-marker]:hidden">
                 <span>{item.question}</span>
                 <ChevronDown
                   className="size-5 shrink-0 text-muted-foreground transition-transform duration-300 group-open:rotate-180"

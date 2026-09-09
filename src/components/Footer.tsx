@@ -20,7 +20,7 @@ export function Footer() {
           <div className="flex max-w-sm flex-col gap-3">
             <span className="font-heading text-lg font-bold">{site.name}</span>
             <p className="text-sm leading-relaxed text-muted-foreground">{t.footer.tagline}</p>
-            <a href={telHref} className="text-sm font-semibold text-primary underline-offset-4 hover:underline">
+            <a href={telHref} dir="ltr" className="w-fit text-sm font-semibold text-primary underline-offset-4 hover:underline">
               {site.phoneDisplay}
             </a>
           </div>
@@ -38,7 +38,7 @@ export function Footer() {
           <p>
             © {year} {site.name} — {site.practitioner}. {t.footer.rights}
           </p>
-          <p className="max-w-md text-pretty md:text-right">{t.footer.disclaimer}</p>
+          <p className="max-w-md text-pretty md:text-end">{t.footer.disclaimer}</p>
         </div>
       </div>
     </footer>

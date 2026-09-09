@@ -15,7 +15,7 @@ export function About() {
     <section id="kine" className="scroll-mt-20 bg-muted py-20 sm:py-24">
       <div className="container-page grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div ref={imageRef} className="reveal relative mx-auto w-full max-w-md lg:max-w-none">
-          <div className="overflow-hidden rounded-2xl shadow-[0_30px_70px_-30px_rgba(15,37,64,0.45)]">
+          <div className="overflow-hidden rounded-2xl shadow-card">
             <img
               src="/images/kine-portrait.webp"
               alt={t.about.imageAlt}
@@ -25,14 +25,14 @@ export function About() {
               className="aspect-[3/4] w-full object-cover"
             />
           </div>
-          <figure className="absolute -bottom-6 right-0 max-w-[85%] rounded-xl border border-border bg-background p-4 shadow-[0_18px_40px_-20px_rgba(15,37,64,0.35)] sm:-right-6">
+          <figure className="absolute -bottom-6 end-0 max-w-[85%] rounded-xl border border-border bg-background p-4 shadow-float sm:-end-6">
             <blockquote className="text-sm font-medium leading-relaxed text-foreground">{t.about.quote}</blockquote>
             <figcaption className="mt-2 text-xs font-semibold text-primary">— {site.practitioner}</figcaption>
           </figure>
         </div>
 
         <div ref={textRef} className="reveal flex flex-col gap-8 pt-6 lg:pt-0">
-          <SectionHeader eyebrow={t.about.eyebrow} title={t.about.title} align="left" tone="green" />
+          <SectionHeader eyebrow={t.about.eyebrow} title={t.about.title} align="start" tone="accent" />
 
           <div className="flex flex-col gap-4 text-pretty text-base leading-relaxed text-muted-foreground">
             {t.about.paragraphs.map((paragraph) => (

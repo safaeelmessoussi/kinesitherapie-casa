@@ -11,7 +11,7 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[60%] bg-[radial-gradient(ellipse_at_top_left,_var(--color-primary-soft)_0%,_transparent_55%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[60%] bg-[radial-gradient(ellipse_at_top,_var(--color-primary-soft)_0%,_transparent_60%)]"
       />
       <div className="container-page grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-24">
         <div className="flex flex-col gap-7 animate-fade-up">
@@ -56,7 +56,7 @@ export function Hero() {
         </div>
 
         <div className="relative animate-fade-up [animation-delay:150ms]">
-          <div className="overflow-hidden rounded-2xl shadow-[0_30px_70px_-30px_rgba(15,37,64,0.45)]">
+          <div className="overflow-hidden rounded-2xl shadow-card">
             <img
               src="/images/hero-cabinet.webp"
               alt={t.hero.imageAlt}
@@ -66,7 +66,7 @@ export function Hero() {
               className="aspect-[4/3] w-full object-cover sm:aspect-[16/11]"
             />
           </div>
-          <div className="absolute -bottom-5 left-5 flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 shadow-[0_18px_40px_-20px_rgba(15,37,64,0.35)] sm:left-8">
+          <div className="absolute -bottom-5 start-5 flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 shadow-float sm:start-8">
             <span className="flex size-10 items-center justify-center rounded-full bg-accent-soft text-accent-foreground">
               <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M20 6 9 17l-5-5" />

@@ -2,14 +2,14 @@ interface SectionHeaderProps {
   eyebrow: string
   title: string
   subtitle?: string
-  align?: 'left' | 'center'
-  tone?: 'blue' | 'green'
+  align?: 'start' | 'center'
+  tone?: 'primary' | 'accent'
 }
 
-export function SectionHeader({ eyebrow, title, subtitle, align = 'center', tone = 'blue' }: SectionHeaderProps) {
-  const alignment = align === 'center' ? 'items-center text-center mx-auto' : 'items-start text-left'
+export function SectionHeader({ eyebrow, title, subtitle, align = 'center', tone = 'primary' }: SectionHeaderProps) {
+  const alignment = align === 'center' ? 'items-center text-center mx-auto' : 'items-start text-start'
   const eyebrowTone =
-    tone === 'blue' ? 'bg-primary-soft text-primary' : 'bg-accent-soft text-accent-foreground'
+    tone === 'primary' ? 'bg-primary-soft text-primary' : 'bg-accent-soft text-accent-foreground'
 
   return (
     <div className={`flex max-w-2xl flex-col gap-4 ${alignment}`}>
