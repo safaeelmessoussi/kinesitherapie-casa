@@ -1,7 +1,7 @@
 # Kinésithérapie Casa
 
-Landing page du cabinet de kinésithérapie de Lechheb Walid à Casablanca.
-Site statique React + Vite + Tailwind CSS v4, bilingue français / anglais, déployé sur Cloudflare Pages.
+Landing page du cabinet de kinésithérapie de Walid à Casablanca.
+Site statique React + Vite + Tailwind CSS v4, disponible en français, anglais, arabe et tamazight, déployé sur Cloudflare Pages.
 
 ## Développement
 
@@ -27,6 +27,6 @@ Les en-têtes de sécurité et le cache des assets sont définis dans `public/_h
 
 ## Modifier le contenu
 
-- Textes FR / EN : `src/i18n/translations.ts`
+- Textes FR / EN / AR / ZGH : `src/i18n/translations.ts`
 - Téléphone, nom du cabinet, ville : `src/lib/site.ts`
 - Images : `public/images/`
