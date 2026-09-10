@@ -1,4 +1,4 @@
-import { Phone, HousePlus, MessageCircleMore, MapPin } from 'lucide-react'
+import { Phone, HousePlus, MessageCircleMore, MapPin, ExternalLink } from 'lucide-react'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { site, telHref, whatsappHref } from '@/lib/site'
 import { ButtonLink } from './ui/Button'
@@ -58,10 +58,10 @@ export function Hero() {
         <div className="relative animate-fade-up [animation-delay:150ms]">
           <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-card">
             <img
-              src="/images/hero-anatomie.webp"
+              src="/images/bureau-centre.webp"
               alt={t.hero.imageAlt}
-              width={1400}
-              height={1400}
+              width={1600}
+              height={1195}
               fetchPriority="high"
               className="aspect-[4/3] w-full object-cover sm:aspect-[16/11]"
             />
@@ -70,16 +70,19 @@ export function Hero() {
             href={site.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group absolute -bottom-5 start-5 flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 shadow-float transition-colors hover:border-primary sm:start-8"
+            className="group absolute -bottom-6 start-5 flex items-center gap-3 rounded-xl border-2 border-primary/30 bg-background ps-3 pe-4 py-3 shadow-float transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-primary sm:start-8"
           >
-            <span className="flex size-10 items-center justify-center rounded-full bg-accent-soft text-accent-foreground">
+            <span className="flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <MapPin className="size-5" aria-hidden="true" />
             </span>
             <span className="flex flex-col leading-tight">
-              <span className="text-sm font-bold group-hover:text-primary">{t.contact.locationShort}</span>
+              <span className="text-sm font-bold">{t.contact.locationShort}</span>
               <span className="text-xs text-muted-foreground">{t.contact.hoursValue}</span>
+              <span className="mt-1 flex items-center gap-1 text-xs font-semibold text-primary underline decoration-primary/40 underline-offset-2 group-hover:decoration-primary">
+                {t.contact.mapsCta}
+                <ExternalLink className="size-3" aria-hidden="true" />
+              </span>
             </span>
-            <span className="sr-only">{t.contact.mapsCta}</span>
           </a>
         </div>
       </div>

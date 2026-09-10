@@ -152,12 +152,12 @@ export const translations: Record<Lang, Translation> = {
       title: 'Retrouvez le mouvement,',
       highlight: 'sans la douleur.',
       subtitle:
-        'Nous vous accompagnons avec une kinésithérapie moderne, humaine et efficace : au centre, à Casablanca, ou directement chez vous. Un bilan précis, un plan clair, et des résultats que vous ressentez.',
+        'Nous vous accompagnons avec une kinésithérapie moderne, humaine et efficace dans notre centre à Casablanca, ou directement chez vous. Un bilan précis, un plan clair, et des résultats que vous ressentez.',
       ctaWhatsapp: 'Réserver sur WhatsApp',
       ctaCall: 'Appeler le centre',
       badgeHome: 'Séances à domicile',
       badgeReply: 'Réponse rapide sur WhatsApp',
-      imageAlt: 'Illustration anatomique de la colonne vertébrale et de l\u2019articulation du genou',
+      imageAlt: 'Bureau de consultation du Centre de Kinésithérapie El Kandari à Casablanca',
     },
     trust: [
       {
@@ -322,7 +322,7 @@ export const translations: Record<Lang, Translation> = {
       addressLabel: 'Adresse',
       addressValue: '176 Bd Nil, 1er étage, Hay Mabrouka — Sidi Othmane, Casablanca',
       mapsCta: 'Ouvrir dans Google Maps',
-      locationShort: 'Sidi Othmane, Casablanca',
+      locationShort: 'Casablanca',
       hoursLabel: 'Horaires',
       hoursValue: 'Du lundi au samedi, sur rendez-vous',
       languagesLabel: 'Langues parlées',
@@ -368,12 +368,12 @@ export const translations: Record<Lang, Translation> = {
       title: 'Move freely again,',
       highlight: 'without the pain.',
       subtitle:
-        'We offer modern, human and effective physiotherapy — at our clinic in Casablanca or in the comfort of your home. A precise assessment, a clear plan, and results you can feel.',
+        'We offer modern, human and effective physiotherapy at our clinic in Casablanca, or in the comfort of your home. A precise assessment, a clear plan, and results you can feel.',
       ctaWhatsapp: 'Book on WhatsApp',
       ctaCall: 'Call the clinic',
       badgeHome: 'Home visits available',
       badgeReply: 'Fast replies on WhatsApp',
-      imageAlt: 'Anatomical illustration of the spine and the knee joint',
+      imageAlt: 'Consultation office at Centre de Kinésithérapie El Kandari in Casablanca',
     },
     trust: [
       {
@@ -537,7 +537,7 @@ export const translations: Record<Lang, Translation> = {
       addressLabel: 'Address',
       addressValue: '176 Bd Nil, 1st floor, Hay Mabrouka — Sidi Othmane, Casablanca',
       mapsCta: 'Open in Google Maps',
-      locationShort: 'Sidi Othmane, Casablanca',
+      locationShort: 'Casablanca',
       hoursLabel: 'Opening hours',
       hoursValue: 'Monday to Saturday, by appointment',
       languagesLabel: 'Languages',
@@ -588,7 +588,7 @@ export const translations: Record<Lang, Translation> = {
       ctaCall: 'اتصل بالمركز',
       badgeHome: 'حصص في المنزل',
       badgeReply: 'رد سريع على واتساب',
-      imageAlt: 'رسم تشريحي للعمود الفقري ومفصل الركبة',
+      imageAlt: 'مكتب الاستشارة في مركز الترويض الطبي الكندري بالدار البيضاء',
     },
     trust: [
       {
@@ -723,7 +723,7 @@ export const translations: Record<Lang, Translation> = {
         {
           question: 'كيف أحجز موعدًا؟',
           answer:
-            'أسهل طريقة هي إرسال رسالة واتساب أو الاتصال بالمركز. حدد حاجتك وأوقاتك المتاحة، وسنقترح عليك بسرعة موعدًا في المركز أو في المنزل.',
+            'أسهل طريقة هي إرسال رسالة وا��ساب أو الاتصال بالمركز. حدد حاجتك وأوقاتك المتاحة، وسنقترح عليك بسرعة موعدًا في المركز أو في المنزل.',
         },
         {
           question: 'ماذا أحضر معي وكيف ألبس؟',
@@ -751,7 +751,7 @@ export const translations: Record<Lang, Translation> = {
       addressLabel: 'العنوان',
       addressValue: '176 شارع النيل، الطابق الأول، حي المبروكة — سيدي عثمان، الدار البيضاء',
       mapsCta: 'افتح في خرائط جوجل',
-      locationShort: 'سيدي عثمان، الدار البيضاء',
+      locationShort: 'الدار البيضاء',
       hoursLabel: 'أوقات العمل',
       hoursValue: 'من الاثنين إلى السبت، بموعد مسبق',
       languagesLabel: 'اللغات',
@@ -801,7 +801,7 @@ export const translations: Record<Lang, Translation> = {
       ctaCall: 'ⵖⵔ ⵉ ⵡⴰⵎⵎⴰⵙ',
       badgeHome: 'ⵜⵉⵖⵉⵎⵉⵜⵉⵏ ⴳ ⵜⴰⴷⴷⴰⵔⵜ',
       badgeReply: 'ⵜⵉⵔⵔⴰⵔⵜ ⵜⴰⵣⵔⴱⴰⵏⵜ ⴳ ⵡⴰⵜⵙⴰⴱ',
-      imageAlt: 'ⵜⴰⵡⵍⴰⴼⵜ ⵏ ⵓⵣⴰⴳⵓⵔ ⴷ ⵜⴼⴷⵏⵜ',
+      imageAlt: 'ⵜⴰⵃⴰⵏⵓⵜ ⵏ ⵓⵎⵙⴰⵡⴰⵍ ⴳ ⵡⴰⵎⵎⴰⵙ ⵍⴽⴰⵏⴷⴰⵔⵉ ⴳ ⵜⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
     },
     trust: [
       {
@@ -966,7 +966,7 @@ export const translations: Record<Lang, Translation> = {
       addressLabel: 'ⵜⴰⵏⵙⴰ',
       addressValue: '176 Bd Nil, 1er étage, Hay Mabrouka — Sidi Othmane, Casablanca',
       mapsCta: 'ⵕⵥⵎ ⴳ Google Maps',
-      locationShort: 'ⵙⵉⴷⵉ ⵄⵜⵎⴰⵏ, ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
+      locationShort: 'ⵜⵉⴳⵎⵎⵉ ⵜⵓⵎⵍⵉⵍⵜ',
       hoursLabel: 'ⵉⵙⵔⴰⴳⵏ',
       hoursValue: 'ⵙⴳ ⵡⴰⵢⵏⴰⵙ ⴰⵔ ⴰⵙⵉⴹⵢⴰⵙ, ⵙ ⵓⵎⵙⴰⴳⴰⵔ',
       languagesLabel: 'ⵜⵓⵜⵍⴰⵢⵉⵏ',
