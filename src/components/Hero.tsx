@@ -55,22 +55,24 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative animate-fade-up [animation-delay:150ms]">
+        <div className="relative mb-16 animate-fade-up [animation-delay:150ms] sm:mb-14">
           <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-card">
             <img
               src="/images/bureau-centre.webp"
+              srcSet="/images/bureau-centre-1000.webp 1000w, /images/bureau-centre.webp 1600w, /images/bureau-centre-2400.webp 2400w"
+              sizes="(min-width: 1024px) 45vw, 100vw"
               alt={t.hero.imageAlt}
               width={1600}
               height={1195}
               fetchPriority="high"
-              className="aspect-[4/3] w-full object-cover sm:aspect-[16/11]"
+              className="aspect-[4/3] w-full object-cover"
             />
           </div>
           <a
             href={site.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group absolute -bottom-6 start-5 flex items-center gap-3 rounded-xl border-2 border-primary/30 bg-background ps-3 pe-4 py-3 shadow-float transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-primary sm:start-8"
+            className="group absolute -bottom-14 start-4 flex items-center gap-3 rounded-xl border-2 border-primary/30 bg-background ps-3 pe-4 py-3 shadow-float transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-primary sm:-bottom-12 sm:start-8"
           >
             <span className="flex size-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <MapPin className="size-5" aria-hidden="true" />
